@@ -1,0 +1,459 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Distributed Systems - Vehicle Digital Twin</title> 
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
+</head> 
+
+<body class="bg-gray-900 text-white"> 
+    <div class="container mx-auto p-6"> 
+        <!-- Header --> 
+        <div class="bg-gradient-to-r from-blue-900 to-purple-900 p-6 rounded-lg mb-6"> 
+            <h1 class="text-4xl font-bold mb-2">🌐 Distributed Systems Project</h1> 
+            <p class="text-xl text-gray-300">Blockchain-Enabled Digital Twin for Vehicles</p> 
+            <p class="text-sm text-gray-400 mt-2">Academic Evaluation: Prof. Andrea Omicini - Distributed Systems</p> 
+        </div> 
+
+ 
+
+        <!-- Network Status Banner --> 
+        <div class="grid grid-cols-4 gap-4 mb-6"> 
+            <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-green-500"> 
+                <div class="text-sm text-gray-400">NETWORK NODES</div> 
+                <div id="total-nodes" class="text-3xl font-bold">5</div> 
+                <div class="text-xs text-green-400 mt-1">Distributed Network</div> 
+            </div> 
+            <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-blue-500"> 
+                <div class="text-sm text-gray-400">HEALTHY NODES</div> 
+                <div id="healthy-nodes" class="text-3xl font-bold">-</div> 
+                <div class="text-xs text-blue-400 mt-1">Online & Responsive</div> 
+            </div> 
+            <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-500"> 
+
+                <div class="text-sm text-gray-400">CONSENSUS</div> 
+                <div id="consensus-status" class="text-3xl font-bold">-</div> 
+                <div class="text-xs text-yellow-400 mt-1">Raft Protocol</div> 
+            </div> 
+            <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-red-500"> 
+                <div class="text-sm text-gray-400">BYZANTINE TOLERANCE</div> 
+                <div id="byzantine-tolerance" class="text-3xl font-bold">1</div> 
+                <div class="text-xs text-red-400 mt-1">Max Faulty Nodes</div> 
+            </div> 
+        </div> 
+
+ 
+
+        <!-- Main Grid --> 
+        <div class="grid grid-cols-3 gap-6"> 
+            <!-- Left: Distributed Network Visualization --> 
+            <div class="col-span-2 bg-gray-800 p-6 rounded-lg"> 
+                <h2 class="text-2xl font-bold mb-4">🌐 Distributed Network Topology</h2> 
+                <div id="network-visualization" class="bg-gray-900 p-4 rounded h-96 flex items-center justify-center"> 
+                    <canvas id="networkCanvas"></canvas> 
+                </div> 
+                <div class="mt-4 grid grid-cols-5 gap-2" id="peer-status"> 
+                    <!-- Peer nodes will be dynamically loaded --> 
+                </div> 
+            </div> 
+
+            <!-- Right: Live Tests & Demos --> 
+            <div class="bg-gray-800 p-6 rounded-lg"> 
+                <h2 class="text-2xl font-bold mb-4">🧪 Live Demonstrations</h2> 
+
+                 
+
+                <div class="space-y-3"> 
+                    <button onclick="runTest('byzantine')"  
+                            class="w-full bg-red-600 hover:bg-red-700 py-3 px-4 rounded font-semibold transition"> 
+                        🛡️ Byzantine Fault Test 
+                    </button> 
+                    <button onclick="runTest('consensus')"  
+                            class="w-full bg-blue-600 hover:bg-blue-700 py-3 px-4 rounded font-semibold transition"> 
+                        ⚡ Consensus Protocol Test 
+                    </button> 
+                    <button onclick="runTest('recovery')"  
+                            class="w-full bg-yellow-600 hover:bg-yellow-700 py-3 px-4 rounded font-semibold transition"> 
+                        🔧 Failure Recovery Test 
+                    </button> 
+                    <button onclick="runTest('comprehensive')"  
+                            class="w-full bg-green-600 hover:bg-green-700 py-3 px-4 rounded font-semibold transition"> 
+                        ✅ Comprehensive Test 
+                    </button> 
+
+ 
+
+                    <div class="border-t border-gray-700 pt-3 mt-3"> 
+                        <h3 class="text-lg font-semibold mb-2">Vehicle Operations</h3> 
+                        <button onclick="registerVehicle()"  
+                                class="w-full bg-purple-600 hover:bg-purple-700 py-2 px-4 rounded transition mb-2"> 
+                            🚗 Register Vehicle 
+                        </button> 
+
+                        <button onclick="addServiceRecord()"  
+                                class="w-full bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded transition"> 
+                            🔧 Add Service Record 
+                        </button> 
+                    </div> 
+
+ 
+
+                    <div class="border-t border-gray-700 pt-3 mt-3"> 
+                        <h3 class="text-lg font-semibold mb-2">Network Manipulation</h3> 
+                        <button onclick="simulateFailure()"  
+                                class="w-full bg-orange-600 hover:bg-orange-700 py-2 px-4 rounded transition mb-2"> 
+                            💥 Simulate Node Failure 
+                        </button> 
+                        <button onclick="recoverNode()"  
+                                class="w-full bg-teal-600 hover:bg-teal-700 py-2 px-4 rounded transition"> 
+                            ♻️ Recover Failed Node 
+                        </button> 
+                    </div> 
+                </div> 
+
+
+                <div id="test-status" class="mt-4 p-3 bg-gray-900 rounded text-sm hidden"> 
+                    <div class="font-semibold mb-1">Test Status:</div> 
+                    <div id="test-message">Ready</div> 
+                </div> 
+            </div> 
+        </div>
+        <!-- Bottom: Test Results & Logs --> 
+
+        <div class="grid grid-cols-2 gap-6 mt-6"> 
+            <!-- Test Results -->
+            <div class="bg-gray-800 p-6 rounded-lg"> 
+                <h2 class="text-xl font-bold mb-4">📊 Test Results</h2> 
+                <div id="test-results" class="space-y-2 max-h-96 overflow-y-auto"> 
+                    <div class="text-gray-400 text-center py-8">Run a test to see results</div> 
+                </div> 
+            </div> 
+
+ 
+
+            <!-- System Logs --> 
+
+            <div class="bg-gray-800 p-6 rounded-lg"> 
+                <h2 class="text-xl font-bold mb-4">📝 Network Activity Log</h2> 
+                <div id="activity-log" class="space-y-1 max-h-96 overflow-y-auto font-mono text-xs"> 
+                    <div class="text-gray-400">Initializing distributed network...</div> 
+                </div> 
+            </div> 
+        </div> 
+
+ 
+
+        <!-- Footer --> 
+        <div class="mt-6 text-center text-gray-500 text-sm"> 
+            <p>Distributed Systems Project | Prof. Andrea Omicini | University of Bologna</p> 
+            <p class="mt-1">Demonstrates: Byzantine Fault Tolerance • Raft Consensus • Failure Recovery • Data Replication</p> 
+        </div> 
+    </div> 
+
+ 
+
+    <script> 
+
+        let networkData = null; 
+        let logCounter = 0; 
+
+ 
+
+        // Load network status 
+        async function loadNetworkStatus() { 
+            try { 
+                const response = await fetch('/api/network/status'); 
+                const data = await response.json(); 
+                networkData = data;
+
+ 
+
+                // Update metrics 
+
+                document.getElementById('healthy-nodes').textContent = data.network.peers.filter(p => p.status === 'online').length; 
+                document.getElementById('consensus-status').textContent = data.consensus.state.toUpperCase(); 
+ 
+
+                // Update peer status 
+
+                const peerStatusHtml = data.network.peers.map(peer => ` 
+                    <div class="bg-gray-900 p-2 rounded text-center"> 
+                        <div class="text-xs font-semibold">${peer.nodeId}</div> 
+                        <div class="text-xs ${peer.status === 'online' ? 'text-green-400' : 'text-red-400'}"> 
+                            ${peer.status === 'online' ? '●' : '○'} ${peer.status} 
+                        </div>
+                        <div class="text-xs text-gray-500">${peer.logLength} entries</div> 
+                    </div> 
+
+                `).join(''); 
+                document.getElementById('peer-status').innerHTML = peerStatusHtml; 
+                addLog(`Network status updated: ${data.network.peers.filter(p => p.status === 'online').length}/${data.network.totalNodes} nodes online`); 
+            } catch (error) { 
+                console.error('Failed to load network status:', error); 
+                addLog('ERROR: Failed to load network status', 'error'); 
+            } 
+        } 
+        // Run distributed systems tests 
+
+        async function runTest(testType) { 
+
+            showTestStatus(`Running ${testType} test...`);
+            addLog(`🧪 Starting ${testType} test`, 'info'); 
+            try { 
+                const response = await fetch(`/api/test/${testType}`, { method: 'POST' }); 
+                const result = await response.json(); 
+
+ 
+
+                displayTestResults(result); 
+                addLog(`✅ ${testType} test completed`, 'success'); 
+                showTestStatus(`${testType} test completed!`, 'success'); 
+
+                // Refresh network status 
+                await loadNetworkStatus(); 
+            } catch (error) { 
+                addLog(`❌ ${testType} test failed: ${error.message}`, 'error'); 
+                showTestStatus(`Test failed: ${error.message}`, 'error'); 
+            } 
+        } 
+
+ 
+
+        // Register vehicle 
+
+        async function registerVehicle() { 
+            const vin = prompt('Enter VIN (17 characters):') || `TEST${Date.now()}`; 
+            if (vin.length !== 17 && !vin.startsWith('TEST')) { 
+                alert('VIN must be 17 characters'); 
+                return;
+            }
+            try { 
+                const response = await fetch('/api/vehicle/register', { 
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' }, 
+                    body: JSON.stringify({ 
+                        vin, 
+                        make: 'Tesla', 
+                        model: 'Model 3', 
+                        year: 2024 
+                    }) 
+                }); 
+
+                const result = await response.json(); 
+                addLog(`🚗 Vehicle registered: ${vin}`, 'success'); 
+                alert(`Vehicle registered successfully!\nReplicated on ${result.replication.replicationFactor} nodes`); 
+            } catch (error) { 
+                addLog(`❌ Registration failed: ${error.message}`, 'error'); 
+                alert('Registration failed: ' + error.message); 
+            } 
+
+        } 
+
+ 
+
+        // Add service record 
+
+        async function addServiceRecord() { 
+            const vin = prompt('Enter VIN:'); 
+            if (!vin) return; 
+
+ 
+
+            try { 
+
+                const response = await fetch(`/api/vehicle/${vin}/service`, { 
+
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' }, 
+                    body: JSON.stringify({ 
+                        type: 'Oil Change', 
+                        description: 'Regular maintenance', 
+                        cost: 50, 
+                        mileage: 15000 
+                    }) 
+
+                }); 
+
+ 
+
+                const result = await response.json(); 
+
+                 
+
+                if (result.success) { 
+
+                    addLog(`🔧 Service record added for ${vin}`, 'success'); 
+                    alert('Service record added and replicated across network!'); 
+
+                } else { 
+
+                    addLog(`❌ Service record failed: ${result.error}`, 'error'); 
+                    alert('Failed: ' + result.error); 
+
+                } 
+
+            } catch (error) { 
+
+                addLog(`❌ Service record error: ${error.message}`, 'error'); 
+                alert('Error: ' + error.message); 
+
+            } 
+
+        } 
+
+ 
+
+        // Simulate node failure 
+
+        async function simulateFailure() { 
+
+            const nodeId = prompt('Enter node ID (peer-0 to peer-4):', 'peer-2'); 
+            if (!nodeId) return; 
+
+ 
+
+            try { 
+
+                const response = await fetch(`/api/network/simulate-failure/${nodeId}`, { 
+
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' }, 
+                    body: JSON.stringify({ failureType: 'crash' }) 
+
+                }); 
+
+ 
+
+                const result = await response.json(); 
+                addLog(`💥 Simulated failure on ${nodeId}`, 'warning'); 
+                alert(`Node ${nodeId} failure simulated`); 
+                await loadNetworkStatus(); 
+
+            } catch (error) { 
+
+                addLog(`❌ Failure simulation error: ${error.message}`, 'error'); 
+
+            } 
+
+        } 
+
+ 
+
+        // Recover node 
+
+        async function recoverNode() { 
+
+            const nodeId = prompt('Enter node ID to recover (peer-0 to peer-4):', 'peer-2'); 
+
+            if (!nodeId) return; 
+            try { 
+
+                const response = await fetch(`/api/network/recover/${nodeId}`, { method: 'POST' }); 
+                const result = await response.json(); 
+                addLog(`♻️ Recovery initiated for ${nodeId}`, 'success'); 
+                alert(`Node ${nodeId} recovery initiated`); 
+                await loadNetworkStatus(); 
+
+            } catch (error) { 
+                addLog(`❌ Recovery error: ${error.message}`, 'error'); 
+            } 
+
+        } 
+
+ 
+
+        // Display test results 
+
+        function displayTestResults(result) { 
+
+            const resultsDiv = document.getElementById('test-results'); 
+            const html = ` 
+                <div class="bg-gray-900 p-4 rounded border-l-4 ${result.success ? 'border-green-500' : 'border-red-500'}"> 
+                    <div class="font-bold text-lg mb-2">${result.test || result.testSuite || 'Test Results'}</div> 
+                    ${result.summary ? ` 
+                        <div class="mb-2"> 
+
+                            <span class="text-green-400">${result.summary.passed} passed</span> •  
+                            <span class="text-red-400">${result.summary.failed || 0} failed</span> •  
+                            <span class="text-gray-400">${result.summary.total} total</span> 
+                        </div> 
+                    ` : ''} 
+
+                    ${result.conclusion ? ` 
+                        <div class="text-sm text-gray-300 mt-2">${result.conclusion}</div> 
+                    ` : ''} 
+                    <div class="text-xs text-gray-500 mt-2">${new Date(result.timestamp).toLocaleString()}</div> 
+                </div> 
+
+            `; 
+
+              resultsDiv.innerHTML = html + resultsDiv.innerHTML; 
+
+        } 
+
+ 
+
+        // Show test status 
+
+        function showTestStatus(message, type = 'info') { 
+            const statusDiv = document.getElementById('test-status'); 
+            const messageDiv = document.getElementById('test-message'); 
+
+             
+
+            statusDiv.classList.remove('hidden'); 
+            messageDiv.textContent = message; 
+
+             
+
+            statusDiv.className = `mt-4 p-3 rounded text-sm ${ 
+                type === 'success' ? 'bg-green-900 text-green-200' : 
+                type === 'error' ? 'bg-red-900 text-red-200' : 
+                type === 'warning' ? 'bg-yellow-900 text-yellow-200' : 
+                'bg-gray-900 text-gray-200' 
+
+            }`; 
+
+        } 
+
+ 
+
+        // Add log entry 
+
+        function addLog(message, type = 'info') { 
+            const logDiv = document.getElementById('activity-log'); 
+            const timestamp = new Date().toLocaleTimeString(); 
+            const icon = type === 'error' ? '❌' : type === 'success' ? '✅' : type === 'warning' ? '⚠️' : 'ℹ️'; 
+
+             
+
+            const logEntry = document.createElement('div'); 
+            logEntry.className = `text-${type === 'error' ? 'red' : type === 'success' ? 'green' : type === 'warning' ? 'yellow' : 'gray'}-400`; 
+            logEntry.textContent = `[${timestamp}] ${icon} ${message}`; 
+
+    
+            logDiv.insertBefore(logEntry, logDiv.firstChild); 
+
+            // Keep only last 50 logs 
+            if (logDiv.children.length > 50) { 
+                logDiv.removeChild(logDiv.lastChild); 
+            } 
+        } 
+ 
+
+        // Initial load 
+
+        loadNetworkStatus(); 
+        setInterval(loadNetworkStatus, 5000); // Refresh every 5 seconds 
+        addLog('🚀 Distributed Systems Dashboard initialized', 'success'); 
+        addLog('🌐 Monitoring 5-node network with Byzantine fault tolerance', 'info'); 
+
+    </script> 
+</body> 
+
+</html> 
