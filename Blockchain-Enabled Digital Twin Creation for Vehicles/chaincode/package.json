@@ -1,0 +1,39 @@
+{
+  "name": "vehicle-chaincode",
+  "version": "1.0.0",
+  "description": "Smart contract for Vehicle Digital Twins",
+  "main": "index.js",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "fabric-chaincode-node start",
+    "test": "mocha --recursive",
+    "lint": "eslint ."
+  },
+  "engineStrict": true,
+  "author": "Mary Anne Selirio",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fabric-contract-api": "^2.2.0",
+    "fabric-shim": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "mocha": "^9.1.1",
+    "sinon": "^11.1.2",
+    "sinon-chai": "^3.7.0"
+  },
+  "keywords": [
+    "hyperledger",
+    "fabric",
+    "chaincode",
+    "smart-contract",
+    "vehicle",
+    "digital-twin",
+    "telemetry",
+    "iot"
+  ]
+}
