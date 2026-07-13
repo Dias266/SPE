@@ -1,0 +1,82 @@
+# Distributed - Fleet Operational Center
+
+A distributed multi-node server environment built to orchestrate and monitor real-time network states. This system incorporates a Dockerized Node.js backend alongside a highly optimized, visual dashboard frontend featuring real-time telemetry elements like interactive SVG gauge animations, dynamic temperature rows, and granular signal-bar urgency indicators.
+
+---
+
+## 🚀 Features
+
+* **Distributed Architecture:** Engineered for scalable, multi-node communication.
+* **Real-Time Fleet UI:** Single-page tracking panel (`fleet_operational_center.html`) to visualize status across endpoints.
+* **Dynamic Telemetry:** Custom CSS-animated SVG gauges (`.gauge-wrap`, `.gauge-arc`) displaying cool, warm, and critical states.
+* **Urgency Indicators:** Custom responsive signal bars (`.signal`, `.signal.bars`) indicating immediate network priority.
+* **Production Ready:** Pre-configured Docker environment for instant containerized deployment.
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── backend/
+│   ├── Dockerfile          # Container build recipes for the server
+│   ├── package.json        # Backend dependencies & boot scripts
+│   └── server.js           # Core Node.js server engine
+├── frontend/
+│   ├── index.html          # Core template dashboard
+│   └── fleet_operational_center.html  # Fleet dashboard management console
+├── docker-compose.yml      # Orchestration config for swift multi-container spin-ups
+├── package.json            # Root configuration management
+├── package-lock.json       # Dependency tree lockfile
+└── README.md               # Project documentation
+```
+
+---
+
+## 🛠️ Quick Start
+
+### Prerequisites
+* Ensure you have [Docker](https://docker.com) and [Docker Compose](https://google.com) installed.
+
+### 1. Clone the Project
+```bash
+git clone https://github.com
+cd DistributedCodenamesGame
+```
+
+### 2. Launch with Docker Compose
+Spin up the entire node network and backend environment instantly:
+```bash
+docker-compose up --build
+```
+
+### 3. Access the Dashboards
+Once container initialization completes, open your web browser to view your live fleet tracking metrics:
+* **Primary Console:** `http://localhost:3000` *(or your configured backend port)*
+* **Fleet Control:** `http://localhost:3000/frontend/fleet_operational_center.html`
+
+---
+
+<img width="1440" height="637" alt="Screenshot 2026-07-08 at 11 52 21" src="https://github.com/user-attachments/assets/5adfea99-118e-464c-ac2e-f534efeb03f9" />
+
+
+## 🎛️ UI & Styling Customization
+
+The dashboard relies on lightweight CSS variables (`var(--accent)`, `var(--warn)`, `var(--crit)`) mapped onto native elements for low overhead:
+* **Typography:** Built using the ultra-readable `IBM Plex Mono` monospace font for structural telemetry readability.
+* **Gauges:** SVG strokes use transitions (`transition: stroke .4s ease`) to smoothly glide between network performance spikes without triggering page-wide repaints.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the project repository.
+2. Create your targeted feature branch (`git checkout -b feature/NewTelemetry`).
+3. Commit your layout updates (`git commit -m 'Add NewTelemetry tracking component'`).
+4. Push your local branch (`git push origin feature/NewTelemetry`).
+5. Submit a comprehensive Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
