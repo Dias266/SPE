@@ -9,6 +9,8 @@ import java.net.URI;
 import java.net.http.HttpRequest.BodyPublishers;
 import java.net.http.HttpResponse.BodyHandlers;
 
+import org.json.JSONObject;
+
 /**
  * FleetMASEnvironment
  *
@@ -31,7 +33,7 @@ public class FleetMASEnvironment extends Environment {
     private static final boolean USE_REAL_INTEGRATIONS = false;
 
     // DS project endpoints (from start-all.sh output)
-    private static final String DS_BACKEND_URL  = "http://localhost:3000";
+    private static final String DS_BACKEND_URL  = "http://localhost:3002";
     private static final String ML_BACKEND_URL  = "http://localhost:5000";
 
     private IoTStreamAdapter    iotAdapter;
@@ -60,7 +62,7 @@ public class FleetMASEnvironment extends Environment {
             logger.info("[ENV] Mode: MOCK — using simulated data");
             iotAdapter        = new MockIoTStream();
             mlAdapter         = new MockMLPipeline();
-            blockchainAdapter = new MockBlockchainClient();
+            blockchainAdapter = new RealBlockchainClient();
         }
 
         startTickThread();
@@ -83,7 +85,10 @@ public class FleetMASEnvironment extends Environment {
         String functor = action.getFunctor();
         logger.info("[ENV] Action from " + agentName + ": " + functor);
 
+
+
         switch (functor) {
+
 
             case "registerCoordinator":
                 logger.info("[ENV] FleetCoordinator registered.");
@@ -92,9 +97,15 @@ public class FleetMASEnvironment extends Environment {
             case "pollIoTAnomalyStream":
                 return handlePollIoT(agentName);
 
+            case "logFleetAnomalyToBlockchainLoop":
+                logger.info("[ENV] FleetCoordinator logFleetAnomalyToBlockchain Lopp.");
+
+
             case "logFleetAnomalyToBlockchain":
                 String anomalyType = action.getTerm(0).toString();
                 String countStr    = action.getTerm(1).toString();
+                handleReadDigitalTwin(agentName, action.getTerm(0).toString());
+
                 return blockchainAdapter.logFleetAnomaly(anomalyType, Integer.parseInt(countStr));
 
             case "registerVehicle":
@@ -125,6 +136,12 @@ public class FleetMASEnvironment extends Environment {
             case "readDigitalTwin":
                 return handleReadDigitalTwin(agentName, action.getTerm(0).toString());
 
+            case "sendMQTTMessage":
+                // Extract arguments from AgentSpeak call
+                String topic = action.getTerm(0).toString();
+                String payload = action.getTerm(1).toString();
+                return handleMQTT4(topic, payload);
+
             case "writeServiceRecord":
                 String vehicleId = action.getTerm(0).toString();
                 String details   = action.getTerm(1).toString();
@@ -145,6 +162,153 @@ public class FleetMASEnvironment extends Environment {
     // -------------------------------------------------------------------------
     // Internal Handlers
     // -------------------------------------------------------------------------
+
+
+
+
+    private boolean handleMQTT(String topic, String payload) {
+        try {
+            logger.info("[ENV] handleMQTT Calling API to publish telemetry...");
+
+
+            logger.info("[ENV] handleMQTT Calling API to publish payload:" + payload);
+
+
+            // 1. Prepare the JSON body
+            // Note: You may need to parse your 'payload' string into these variables 
+            // if it's not already structured.
+            String jsonInputString = "{"
+                    + "\"vin\": \"TEST-VIN-123\","
+                    + "\"temp\": \"20\","
+                    + "\"mileage\": \"4000\","
+                    + "\"state\": \"NORMAL\""
+                    + "}";
+
+            // 2. Build the HTTP Request
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("http://localhost:3002/api/publish-telemetry")) // Adjust port if needed
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(jsonInputString))
+                    .build();
+
+            // 3. Send the request
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // 4. Check response
+            if (response.statusCode() == 200) {
+                logger.info("[ENV] API call successful: " + response.body());
+                System.out.println("[MQTT-PUBLISH] Topic: " + " Payload: " + response);
+
+                return true;
+            } else {
+                logger.warning("[ENV] API call failed with code: " + response.statusCode());
+                return false;
+            }
+
+        } catch (Exception e) {
+            logger.warning("[ENV] HTTP request failed: " + e.getMessage());
+            return false;
+        }
+    }
+
+
+    private boolean handleMQTT4(String topic, String payload) {
+        try {
+            // 1. CLEANING: Remove extra quotes added by AgentSpeak's string concatenation
+            String cleanPayload = payload;
+            
+            // If it starts and ends with a quote, remove them
+            if (cleanPayload.startsWith("\"") && cleanPayload.endsWith("\"")) {
+                cleanPayload = cleanPayload.substring(1, cleanPayload.length() - 1);
+            }
+            
+            // If the concatenation caused internal double-escaping, fix it
+            cleanPayload = cleanPayload.replace("\\\"", "\"");
+
+            logger.info("[ENV] Sending payload to API: " + cleanPayload);
+
+            // 2. Build the HTTP Request
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("http://localhost:3002/api/publish-telemetry"))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(cleanPayload))
+                    .build();
+
+            // 3. Send and Check
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                logger.info("[ENV] API call successful: " + response.body());
+                return true;
+            } else {
+                logger.warning("[ENV] API call failed, status: " + response.statusCode());
+                return false;
+            }
+
+        } catch (Exception e) {
+            logger.log(java.util.logging.Level.SEVERE, "[ENV] HTTP request failed", e);
+            return false;
+        }
+    }
+    
+
+    private boolean handleMQTT3(String topic, String payload) {
+        try {
+            logger.info("[ENV] handleMQTT Calling API to publish telemetry...");
+            logger.info("[ENV] handleMQTT Calling API to publish payload: " + payload);
+
+            // 1. Use the 'payload' parameter directly.
+            // Ensure that 'payload' is a valid JSON string (as constructed in your AgentSpeak).
+            String jsonInputString = payload;
+
+            // 2. Build the HTTP Request using the dynamic payload
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("http://localhost:3002/api/publish-telemetry"))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(jsonInputString)) // Use variable here
+                    .build();
+
+            // 3. Execute the request
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            
+            logger.info("[ENV] API call successful: " + response.body());
+            return true;
+
+        } catch (Exception e) {
+            logger.severe("[ENV] Failed to publish telemetry: " + e.getMessage());
+            return false;
+        }
+    }
+
+
+    private boolean handleMQTT2(String topic, String payload) {
+        try {
+            logger.info("[ENV] handleMQTT Publishing to MQTT topic: " + topic);
+            
+            // INTEGRATION POINT: 
+            // If you have an MQTT client instance, use it here.
+            // Example: mqttClient.publish(topic, new MqttMessage(payload.getBytes()));
+            
+            System.out.println("[MQTT-PUBLISH] Topic: " + topic + " Payload: " + payload);
+
+
+            
+            
+            return true;
+        } catch (Exception e) {
+            logger.warning("[ENV] MQTT publish failed: " + e.getMessage());
+            return false;
+        }
+
+
+        
+    }
+
+
+
 
     private boolean handlePollIoT(String agentName) {
         List<IoTAnomaly> anomalies = iotAdapter.getLatestAnomalies();
@@ -171,11 +335,38 @@ public class FleetMASEnvironment extends Environment {
         return true;
     }
 
+    
+
     private boolean handleReadDigitalTwin(String agentName, String vin) {
+
+        System.out.println("[BLOCKCHAIN-REAL] REAL digital twin read for " + agentName + " (VIN: " + vin + ")");
+
+
         String history = blockchainAdapter.readDigitalTwin(vin);
-        addPercept(agentName, ASSyntax.createLiteral("maintenance_history",
-                ASSyntax.createAtom(vin),
-                ASSyntax.createAtom(history)));
+
+        System.out.println("[BLOCKCHAIN-REAL] history for " + history);
+
+        
+        JSONObject jsonObject = new JSONObject(history);
+        
+        // 3. Extract the VIN correctly from the nested data
+        // Note: If history is just the JSON, this will work. 
+        // If it's a JSON-stringified representation, the parser will handle it.
+        String actualVin = jsonObject.getJSONObject("data").getString("vin");
+
+
+        Literal percept = ASSyntax.createLiteral("test_fleet", 
+            ASSyntax.createAtom(actualVin), 
+            ASSyntax.createAtom(history)
+        );
+
+        // 2. Add the percept to the specific agent's belief base
+        // Assuming 'this' is your Environment class
+        addPercept(agentName, percept);
+        
+        System.out.println("[BLOCKCHAIN-REAL] Percept 'test_fleet' added to " + agentName);
+
+
         return true;
     }
 
@@ -240,22 +431,48 @@ public class FleetMASEnvironment extends Environment {
 
     class RealBlockchainClient implements BlockchainAdapter {
 
+        public RealBlockchainClient() {
+            System.out.println("[BLOCKCHAIN-REAL] RealBlockchainClient initialized and active.");
+        }
+
         @Override
         public boolean logFleetAnomaly(String anomalyType, int count) {
+
+            
             try {
                 String payload = String.format(
                         "{\"type\":\"fleet_anomaly\",\"anomalyType\":\"%s\",\"count\":%d,\"source\":\"MAS-FleetCoordinator\",\"timestamp\":%d}",
                         anomalyType, count, System.currentTimeMillis());
-
+                
                 HttpRequest req = HttpRequest.newBuilder()
-                        .uri(URI.create(DS_BACKEND_URL + "/api/telemetry/store"))
+                        .uri(URI.create(DS_BACKEND_URL + "/api/telemetry/history"))
                         .header("Content-Type", "application/json")
-                        .POST(BodyPublishers.ofString(payload))
+                        .GET() // Changed from .POST(...) to .GET()
                         .build();
+
+
+                System.out.println("[BLOCKCHAIN-REAL] manoo mige anomaly logged: ");
 
                 HttpResponse<String> resp = httpClient.send(req, BodyHandlers.ofString());
                 System.out.println("[BLOCKCHAIN-REAL] Fleet anomaly logged: "
                         + anomalyType + " x" + count + " → HTTP " + resp.statusCode());
+
+                if (resp.statusCode() == 200) {
+                    String responseBody = resp.body();
+                    
+                    // Simple way to log that the request succeeded
+                    System.out.println("[BLOCKCHAIN-REAL] Successfully fetched telemetry data.");
+                    
+                    // If you want to print the full raw JSON to the console:
+                    System.out.println("[BLOCKCHAIN-REAL] Received JSON: " + responseBody);
+                    
+                } else {
+                    System.out.println("[BLOCKCHAIN-REAL] Failed to fetch data. HTTP Status: " + resp.statusCode());
+                }
+
+        
+
+
                 return resp.statusCode() == 200 || resp.statusCode() == 201;
 
             } catch (Exception e) {
@@ -267,33 +484,18 @@ public class FleetMASEnvironment extends Environment {
 
         @Override
         public boolean writeServiceRecord(String vehicleId, String details) {
-            try {
-                String payload = String.format(
-                        "{\"service\":\"%s\",\"timestamp\":%d,\"source\":\"MAS-ServiceCenterAgent\"}",
-                        details, System.currentTimeMillis());
-
-                HttpRequest req = HttpRequest.newBuilder()
-                        .uri(URI.create(DS_BACKEND_URL + "/api/vehicle/" + vehicleId + "/service"))
-                        .header("Content-Type", "application/json")
-                        .POST(BodyPublishers.ofString(payload))
-                        .build();
-
-                HttpResponse<String> resp = httpClient.send(req, BodyHandlers.ofString());
-                System.out.println("[BLOCKCHAIN-REAL] Service record written for "
-                        + vehicleId + " → HTTP " + resp.statusCode());
-                return resp.statusCode() == 200 || resp.statusCode() == 201;
-
-            } catch (Exception e) {
-                logger.warning("[ENV] Service record write failed: " + e.getMessage());
-                return false;
-            }
+            return true;
         }
 
         @Override
         public String readDigitalTwin(String vin) {
+
+            System.out.println("[BLOCKCHAIN-REAL] Read for " + vin);
+
+
             try {
                 HttpRequest req = HttpRequest.newBuilder()
-                        .uri(URI.create(DS_BACKEND_URL + "/api/vehicle/" + vin))
+                        .uri(URI.create(DS_BACKEND_URL + "/api/telemetry/latest/"))
                         .GET()
                         .build();
 

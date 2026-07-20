@@ -2,356 +2,162 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fleet Operations · Telemetry</title>
+<title>Fleet Operational Center</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root{
-    --bg:#0A0E13;
-    --bg-grid: rgba(69,217,199,.035);
-    --surface:#111820;
-    --surface-2:#161F29;
-    --line:#233039;
-    --line-soft:#1A242D;
-    --text:#E9F1F4;
-    --text-dim:#7E93A0;
-    --text-faint:#4E606B;
-    --accent:#45D9C7;
-    --accent-dim:rgba(69,217,199,.14);
-    --warn:#F2A93B;
-    --warn-dim:rgba(242,169,59,.14);
-    --crit:#FF5C5C;
-    --crit-dim:rgba(255,92,92,.14);
-    --radius:16px;
+    --bg:#0A0C10;
+    --card-bg:#161B22;
+    --border:#30363D;
+    --text:#E6EDF3;
+    --muted:#8B949E;
+    --accent:#58A6FF;
+    --warning:#F0883E;
+    --danger:#F85149;
+    --success:#3FB950;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 
 body{
-    background:
-        radial-gradient(ellipse 900px 500px at 15% -10%, rgba(69,217,199,.07), transparent 60%),
-        radial-gradient(ellipse 700px 500px at 100% 0%, rgba(255,92,92,.04), transparent 55%),
-        var(--bg);
-    background-attachment:fixed;
+    background:var(--bg);
     color:var(--text);
-    font-family:'Inter',sans-serif;
-    padding:44px 48px 80px;
-    min-height:100vh;
-}
-
-/* ---------- Header ---------- */
-
-header{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:20px;
-    margin-bottom:34px;
-    padding-bottom:28px;
-    border-bottom:1px solid var(--line-soft);
-}
-
-.title-block .eyebrow{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:.72rem;
-    letter-spacing:.16em;
-    color:var(--accent);
-    text-transform:uppercase;
-    margin-bottom:10px;
-    display:flex;
-    align-items:center;
-    gap:9px;
-}
-
-.title-block .eyebrow::before{
-    content:"";
-    width:7px; height:7px;
-    border-radius:50%;
-    background:var(--accent);
-    box-shadow:0 0 0 3px var(--accent-dim);
-    animation:pulseDot 1.8s ease-in-out infinite;
-}
-
-@keyframes pulseDot{
-    0%,100%{ opacity:1; box-shadow:0 0 0 3px var(--accent-dim); }
-    50%{ opacity:.55; box-shadow:0 0 0 6px transparent; }
+    font-family:'Outfit',sans-serif;
+    padding:40px;
 }
 
 h1{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:600;
-    font-size:2.4rem;
-    letter-spacing:-.02em;
-    color:var(--text);
-}
-
-.title-block p{
-    color:var(--text-dim);
-    font-size:.92rem;
-    margin-top:8px;
-    max-width:480px;
+    color:var(--accent);
+    border-left:5px solid var(--accent);
+    padding-left:18px;
+    margin-bottom:35px;
+    font-size:2rem;
+    display:flex;
+    align-items:center;
+    gap:14px;
 }
 
 #lastUpdate{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:.78rem;
-    color:var(--text-faint);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.8rem;
+    color:var(--muted);
+    font-weight:400;
 }
-
-.pulse-strip{
-    display:flex;
-    align-items:center;
-    gap:2px;
-    height:26px;
-}
-.pulse-strip .bar{
-    width:3px;
-    background:var(--line);
-    border-radius:2px;
-    height:6px;
-    transition:height .3s ease, background .3s ease;
-}
-.pulse-strip.live .bar{
-    animation:strip 1.2s ease-in-out infinite;
-    background:var(--accent);
-}
-.pulse-strip .bar:nth-child(1){ animation-delay:.0s; }
-.pulse-strip .bar:nth-child(2){ animation-delay:.08s; }
-.pulse-strip .bar:nth-child(3){ animation-delay:.16s; }
-.pulse-strip .bar:nth-child(4){ animation-delay:.24s; }
-.pulse-strip .bar:nth-child(5){ animation-delay:.32s; }
-.pulse-strip .bar:nth-child(6){ animation-delay:.40s; }
-.pulse-strip .bar:nth-child(7){ animation-delay:.48s; }
-@keyframes strip{
-    0%,100%{ height:6px; }
-    50%{ height:22px; }
-}
-
-.status-block{
-    text-align:right;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:8px;
-}
-
-/* ---------- Grid ---------- */
 
 #fleet{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-}
-
-.loading-state{
-    font-family:'IBM Plex Mono',monospace;
-    color:var(--text-dim);
-    font-size:.85rem;
+    gap:22px;
 }
 
 /* ---------- Card ---------- */
 
 .card{
-    background:linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:24px 24px 22px;
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:25px;
     opacity:0;
-    transform:translateY(14px);
+    transform:translateY(20px);
     transition:box-shadow .5s ease, border-color .5s ease;
-    position:relative;
-    overflow:hidden;
 }
 
-.card::before{
-    content:"";
-    position:absolute;
-    top:0; left:0; right:0; height:1px;
-    background:linear-gradient(90deg, transparent, var(--line), transparent);
+.card.in{
+    animation:cardIn .5s ease forwards;
 }
-
-.card.in{ animation:cardIn .55s cubic-bezier(.16,1,.3,1) forwards; }
 
 @keyframes cardIn{
-    from{ opacity:0; transform:translateY(14px); }
+    from{ opacity:0; transform:translateY(20px); }
     to{ opacity:1; transform:translateY(0); }
 }
 
-.card.warn{ border-color:rgba(242,169,59,.45); box-shadow:0 0 0 1px rgba(242,169,59,.08), 0 12px 30px -14px rgba(242,169,59,.25); }
-.card.critical{ border-color:rgba(255,92,92,.5); box-shadow:0 0 0 1px rgba(255,92,92,.1), 0 14px 34px -12px rgba(255,92,92,.35); }
-.card.service{ border-color:rgba(69,217,199,.35); }
+.card.service{ border-color:var(--accent); }
 
-.card-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:20px;
-    padding-bottom:14px;
-    border-bottom:1px solid var(--line-soft);
+.card.warn{
+    border-color:var(--warning);
+    box-shadow:0 0 16px -6px var(--warning);
 }
 
-.card-head .id{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:.68rem;
-    letter-spacing:.1em;
-    color:var(--text-faint);
-    text-transform:uppercase;
-    display:block;
-    margin-bottom:3px;
+.card.critical{
+    border-color:var(--danger);
+    box-shadow:0 0 18px -4px var(--danger);
+}
+
+@keyframes dangerGlow{
+    from{ box-shadow:0 0 10px -4px var(--danger); }
+    to{ box-shadow:0 0 22px -2px var(--danger); }
 }
 
 h3{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:1.18rem;
-    font-weight:600;
-    color:var(--text);
+    font-size:1.3rem;
+    margin-bottom:18px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
-
-.icon-tag{
-    width:36px; height:36px;
-    border-radius:10px;
-    background:var(--accent-dim);
-    display:flex; align-items:center; justify-content:center;
-    font-size:1.05rem;
-    flex-shrink:0;
-}
-.card.warn .icon-tag{ background:var(--warn-dim); }
-.card.critical .icon-tag{ background:var(--crit-dim); }
 
 .stat{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:10px 0;
-    border-bottom:1px solid var(--line-soft);
+    padding:9px 0;
+    border-bottom:1px solid var(--border);
 }
+
 .stat:last-child{ border-bottom:none; }
 
 .stat span:first-child{
-    color:var(--text-dim);
-    font-size:.82rem;
+    color:var(--muted);
+    font-size:.85rem;
 }
 
 .value{
-    font-family:'IBM Plex Mono',monospace;
-    font-weight:500;
-    font-size:.92rem;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:600;
     color:var(--text);
     transition:color .4s ease;
 }
 
-/* Temperature gauge row */
-.temp-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:12px 0 14px;
-    border-bottom:1px solid var(--line-soft);
-}
-.temp-row .label{ color:var(--text-dim); font-size:.82rem; }
-.gauge-wrap{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-.gauge-wrap svg{ display:block; }
-.gauge-arc-bg{ fill:none; stroke:var(--line); stroke-width:5; }
-.gauge-arc{ fill:none; stroke-width:5; stroke-linecap:round; transition:stroke .4s ease, stroke-dashoffset .5s ease; }
-.temp-cool .gauge-arc{ stroke:var(--accent); }
-.temp-warm .gauge-arc{ stroke:var(--warn); }
-.temp-hot .gauge-arc{ stroke:var(--crit); filter:drop-shadow(0 0 4px rgba(255,92,92,.55)); }
-
-.temp-val{
-    font-family:'IBM Plex Mono',monospace;
+/* Urgency badge */
+.badge{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.78rem;
     font-weight:600;
-    font-size:.92rem;
-}
-.temp-cool .temp-val{ color:var(--accent); }
-.temp-warm .temp-val{ color:var(--warn); }
-.temp-hot .temp-val{ color:var(--crit); }
-
-/* Signal-bar urgency indicator */
-.signal{
-    display:flex;
+    padding:3px 10px;
+    border-radius:20px;
+    display:inline-flex;
     align-items:center;
-    gap:8px;
-}
-.signal .bars{
-    display:flex;
-    align-items:flex-end;
-    gap:2.5px;
-    height:14px;
-}
-.signal .bars i{
-    width:4px;
-    border-radius:1px;
-    background:var(--line);
-    display:block;
-}
-.signal .bars i:nth-child(1){ height:5px; }
-.signal .bars i:nth-child(2){ height:9px; }
-.signal .bars i:nth-child(3){ height:14px; }
-
-.signal.low .bars i:nth-child(1){ background:var(--accent); }
-.signal.medium .bars i:nth-child(1),
-.signal.medium .bars i:nth-child(2){ background:var(--warn); }
-.signal.high .bars i{ background:var(--crit); }
-.signal.high .bars{ animation:signalPulse 1s ease-in-out infinite; }
-@keyframes signalPulse{ 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
-
-.signal .label{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:.72rem;
-    letter-spacing:.06em;
-    font-weight:600;
-}
-.signal.low .label{ color:var(--accent); }
-.signal.medium .label{ color:var(--warn); }
-.signal.high .label{ color:var(--crit); }
-
-/* Service hub load meter */
-.load-meter{
-    height:6px;
-    border-radius:4px;
-    background:var(--line-soft);
-    overflow:hidden;
-    margin-top:6px;
-}
-.load-meter .fill{
-    height:100%;
-    border-radius:4px;
-    background:var(--accent);
-    transition:width .5s ease, background .5s ease;
-}
-.load-meter.critical .fill{ background:var(--crit); }
-
-footer{
-    margin-top:44px;
-    padding-top:20px;
-    border-top:1px solid var(--line-soft);
-    font-family:'IBM Plex Mono',monospace;
-    font-size:.72rem;
-    color:var(--text-faint);
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:8px;
+    gap:6px;
 }
 
-@media (max-width:640px){
-    body{ padding:28px 20px 60px; }
-    h1{ font-size:1.7rem; }
-    header{ flex-direction:column; align-items:flex-start; }
-    .status-block{ align-items:flex-start; }
+.badge.low{ background:rgba(63,185,80,.15); color:var(--success); }
+.badge.medium{ background:rgba(240,136,62,.15); color:var(--warning); }
+.badge.high{
+    background:rgba(248,81,73,.15);
+    color:var(--danger);
+    animation:blink 1.1s ease-in-out infinite;
 }
 
-:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+@keyframes blink{
+    0%,100%{ opacity:1; }
+    50%{ opacity:.45; }
+}
 
-@media (prefers-reduced-motion: reduce){
-    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+.dot{
+    width:7px; height:7px; border-radius:50%;
+    background:currentColor;
+}
+
+/* Temperature glow */
+.temp-cool{ color:var(--accent); }
+.temp-warm{ color:var(--warning); }
+.temp-hot{
+    color:var(--danger);
+    text-shadow:0 0 8px rgba(248,81,73,.6);
 }
 </style>
 
@@ -359,35 +165,17 @@ footer{
 
 <body>
 
-<header>
-    <div class="title-block">
-        <div class="eyebrow">Live Telemetry Feed</div>
-        <h1>Fleet Operations</h1>
-        <p>Real-time vehicle diagnostics, service load, and maintenance urgency across the registered fleet.</p>
-    </div>
-    <div class="status-block">
-        <div class="pulse-strip live" id="pulseStrip">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </div>
-        <span id="lastUpdate">—</span>
-    </div>
-</header>
+<h1>Fleet Operational Center <span id="lastUpdate"></span></h1>
 
-<div id="fleet"><span class="loading-state">Establishing connection…</span></div>
-
-<footer>
-    <span>SRC · localhost:3000/api/fleet</span>
-    <span>Poll interval · 1.0s</span>
-</footer>
+<div id="fleet">Loading...</div>
 
 <script>
 
 const API_URL = "http://localhost:3000/api/fleet";
-const POLL_MS = 1000;
+const POLL_MS = 4000;
 
 const cardEls = new Map();   // key -> card element
-const GAUGE_R = 15;
-const GAUGE_CIRC = 2 * Math.PI * GAUGE_R;
+const dataCache = new Map(); // key -> last known values (for animating deltas)
 
 function urgencyClass(u){
     if(u === "HIGH") return "high";
@@ -402,13 +190,7 @@ function tempClass(t){
     return "temp-cool";
 }
 
-function gaugeOffset(t){
-    // maps 0-100C onto the arc, clamped
-    const n = Math.max(0, Math.min(100, parseFloat(t) || 0));
-    const pct = n / 100;
-    return GAUGE_CIRC * (1 - pct);
-}
-
+// Smoothly counts a number element from its current value to a new one
 function animateNumber(el, to, suffix=""){
     const from = parseFloat(el.dataset.raw || to) || 0;
     to = parseFloat(to);
@@ -430,27 +212,11 @@ function animateNumber(el, to, suffix=""){
     requestAnimationFrame(step);
 }
 
-function gaugeSVG(){
-    return `
-        <svg width="42" height="42" viewBox="0 0 42 42">
-            <circle class="gauge-arc-bg" cx="21" cy="21" r="${GAUGE_R}"></circle>
-            <circle class="gauge-arc" cx="21" cy="21" r="${GAUGE_R}"
-                stroke-dasharray="${GAUGE_CIRC}" stroke-dashoffset="${GAUGE_CIRC}"
-                transform="rotate(-90 21 21)"></circle>
-        </svg>`;
-}
-
 function buildVehicleCard(a){
     const card = document.createElement("div");
     card.className = "card in";
     card.innerHTML = `
-        <div class="card-head">
-            <div>
-                <span class="id">Unit</span>
-                <h3>${a.agent}</h3>
-            </div>
-            <div class="icon-tag">🚘</div>
-        </div>
+        <h3>🚗 ${a.agent}</h3>
         <div class="stat">
             <span>VIN</span>
             <span class="value vin">${a.vin}</span>
@@ -459,19 +225,13 @@ function buildVehicleCard(a){
             <span>Mileage</span>
             <span class="value mileage">0 km</span>
         </div>
-        <div class="temp-row temp-cool">
-            <span class="label">Engine Temp</span>
-            <div class="gauge-wrap">
-                <span class="value temp-val temp">0.0°C</span>
-                ${gaugeSVG()}
-            </div>
+        <div class="stat">
+            <span>Temp</span>
+            <span class="value temp">0.0°C</span>
         </div>
         <div class="stat">
             <span>Urgency</span>
-            <span class="signal urgency">
-                <span class="bars"><i></i><i></i><i></i></span>
-                <span class="value label"></span>
-            </span>
+            <span class="badge urgency"><span class="dot"></span><span class="label"></span></span>
         </div>
     `;
     return card;
@@ -483,31 +243,23 @@ function updateVehicleCard(card, a){
 
     animateNumber(card.querySelector(".mileage"), a.mileage, " km");
 
-    const row = card.querySelector(".temp-row");
-    const tClass = tempClass(a.temp);
-    row.className = "temp-row " + tClass;
-    card.querySelector(".temp").textContent = parseFloat(a.temp).toFixed(1) + "°C";
-    card.querySelector(".gauge-arc").style.strokeDashoffset = gaugeOffset(a.temp);
+    const tempEl = card.querySelector(".temp");
+    tempEl.textContent = parseFloat(a.temp).toFixed(1) + "°C";
+    tempEl.className = "value temp " + tempClass(a.temp);
 
-    const signal = card.querySelector(".urgency");
-    signal.className = "signal urgency " + urgencyClass(a.urgency);
-    signal.querySelector(".label").textContent = a.urgency;
+    const badge = card.querySelector(".urgency");
+    badge.className = "badge urgency " + urgencyClass(a.urgency);
+    badge.querySelector(".label").textContent = a.urgency;
 }
 
 function buildCoordinatorCard(){
     const card = document.createElement("div");
     card.className = "card in";
     card.innerHTML = `
-        <div class="card-head">
-            <div>
-                <span class="id">Control</span>
-                <h3>Fleet Coordinator</h3>
-            </div>
-            <div class="icon-tag">📡</div>
-        </div>
+        <h3>📊 Fleet Coordinator</h3>
         <div class="stat"><span>Registered Vehicles</span><span class="value totalRegistered">0</span></div>
-        <div class="stat"><span>Active Oil Alerts</span><span class="value oilAnomalies" style="color:var(--crit)">0</span></div>
-        <div class="stat"><span>Active Brake Alerts</span><span class="value brakeAnomalies" style="color:var(--crit)">0</span></div>
+        <div class="stat"><span>Active Oil Alerts</span><span class="value oilAnomalies" style="color:var(--danger)">0</span></div>
+        <div class="stat"><span>Active Brake Alerts</span><span class="value brakeAnomalies" style="color:var(--danger)">0</span></div>
         <div class="stat"><span>Fleet Size Limit</span><span class="value fleetSize">0</span></div>
     `;
     return card;
@@ -525,21 +277,11 @@ function buildServiceCard(){
     const card = document.createElement("div");
     card.className = "card service in";
     card.innerHTML = `
-        <div class="card-head">
-            <div>
-                <span class="id">Depot</span>
-                <h3>Service Hub</h3>
-            </div>
-            <div class="icon-tag">🛠</div>
-        </div>
+        <h3>🛠 Service Hub</h3>
         <div class="stat"><span>Records</span><span class="value records">0</span></div>
         <div class="stat"><span>Oil Filter</span><span class="value oil">0</span></div>
         <div class="stat"><span>Brake Pad</span><span class="value brake">0</span></div>
-        <div class="stat" style="display:none">
-            <span>Load</span>
-            <span class="value load"></span>
-        </div>
-        <div class="load-meter" style="display:none"><div class="fill" style="width:0%"></div></div>
+        <div class="stat"><span>Load</span><span class="value load"></span></div>
     `;
     return card;
 }
@@ -552,25 +294,8 @@ function updateServiceCard(card, a){
     const overloaded = a.overloaded === "true";
     const loadEl = card.querySelector(".load");
     loadEl.textContent = overloaded ? "CRITICAL" : "OPTIMAL";
-    loadEl.style.color = overloaded ? "var(--crit)" : "var(--accent)";
+    loadEl.style.color = overloaded ? "var(--danger)" : "var(--success)";
     card.classList.toggle("critical", overloaded);
-
-    const meter = card.querySelector(".load-meter");
-    meter.classList.toggle("critical", overloaded);
-    meter.querySelector(".fill").style.width = overloaded ? "92%" : "38%";
-}
-
-function setLastUpdate(ok){
-    const el = document.getElementById("lastUpdate");
-    const strip = document.getElementById("pulseStrip");
-    const now = new Date();
-    if(ok){
-        el.textContent = "Synced " + now.toLocaleTimeString();
-        strip.classList.add("live");
-    } else {
-        el.textContent = "Connection lost · retrying…";
-        strip.classList.remove("live");
-    }
 }
 
 async function refreshFleet(){
@@ -579,7 +304,7 @@ async function refreshFleet(){
         const agents = await res.json();
         const container = document.getElementById("fleet");
 
-        if(container.querySelector(".loading-state")) container.innerHTML = "";
+        if(container.textContent.trim() === "Loading...") container.innerHTML = "";
 
         const seenKeys = new Set();
 
@@ -604,6 +329,7 @@ async function refreshFleet(){
             update(card, a);
         });
 
+        // Remove cards for vehicles no longer reported
         for(const [key, card] of cardEls){
             if(!seenKeys.has(key)){
                 card.remove();
@@ -611,11 +337,8 @@ async function refreshFleet(){
             }
         }
 
-        setLastUpdate(true);
-
     } catch(e){
         console.log(e);
-        setLastUpdate(false);
     }
 }
 

@@ -1,0 +1,149 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "fleet-mas-maintenance",
+        "directory": "/Users/danialkhayatian/Desktop/pros/clc/Multi-Agent-System-for-Autonomous-Vehicle-Predictive-Maintenance-main",
+        "workspaceDir": "/Users/danialkhayatian/Desktop/pros/clc/Multi-Agent-System-for-Autonomous-Vehicle-Predictive-Maintenance-main",
+        "sources": [
+            "/Users/danialkhayatian/Desktop/pros/clc/Multi-Agent-System-for-Autonomous-Vehicle-Predictive-Maintenance-main"
+        ],
+        "dependencies": [
+            
+        ],
+        "classpath": [
+            "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/io.github.jason-lang/jason-interpreter/3.3.0/3c0fae64839e6566abeb9ed42ab63255e570f972/jason-interpreter-3.3.0.jar",
+            "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.1.4/943f240a509d3c70b448a55c6735591ecbd37c88/javax.json-1.1.4.jar",
+            "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/javax.json/javax.json-api/1.1.4/c8efa3cfaeee2b05c2dfd54cba21548a081b1746/javax.json-api-1.1.4.jar",
+            "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/org.json/json/20230227/7a0d4aca76513d8ce81f9b044ce8126b84809ad8/json-20230227.jar",
+            "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/net.sf.ingenias/jade/4.3/2cf02ba26058230c72da969100a3c2e2e7f06628/jade-4.3.jar"
+        ],
+        "out": "/Users/danialkhayatian/Desktop/pros/clc/Multi-Agent-System-for-Autonomous-Vehicle-Predictive-Maintenance-main/.bloop/fleet-mas-maintenance/build",
+        "classesDir": "/Users/danialkhayatian/Desktop/pros/clc/Multi-Agent-System-for-Autonomous-Vehicle-Predictive-Maintenance-main/.bloop/fleet-mas-maintenance/build/classes",
+        "resources": [
+            "/Users/danialkhayatian/Desktop/pros/clc/Multi-Agent-System-for-Autonomous-Vehicle-Predictive-Maintenance-main/src/main/resources"
+        ],
+        "java": {
+            "options": [
+                "-target",
+                "21",
+                "-source",
+                "21",
+                "-encoding",
+                "UTF-8",
+                "-h",
+                "/Users/danialkhayatian/Desktop/pros/clc/Multi-Agent-System-for-Autonomous-Vehicle-Predictive-Maintenance-main/build/generated/sources/headers/java/main",
+                "-g",
+                "-sourcepath",
+                "",
+                "-proc:none",
+                "-XDuseUnsharedTable=true"
+            ]
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home",
+                "options": [
+                    
+                ]
+            },
+            "mainClass": [
+                
+            ],
+            "classpath": [
+                "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/io.github.jason-lang/jason-interpreter/3.3.0/3c0fae64839e6566abeb9ed42ab63255e570f972/jason-interpreter-3.3.0.jar",
+                "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.1.4/943f240a509d3c70b448a55c6735591ecbd37c88/javax.json-1.1.4.jar",
+                "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/javax.json/javax.json-api/1.1.4/c8efa3cfaeee2b05c2dfd54cba21548a081b1746/javax.json-api-1.1.4.jar",
+                "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/org.json/json/20230227/7a0d4aca76513d8ce81f9b044ce8126b84809ad8/json-20230227.jar",
+                "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/net.sf.ingenias/jade/4.3/2cf02ba26058230c72da969100a3c2e2e7f06628/jade-4.3.jar"
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.json",
+                    "name": "json",
+                    "version": "20230227",
+                    "artifacts": [
+                        {
+                            "name": "json",
+                            "classifier": "sources",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/org.json/json/20230227/7d46b396d84114423568a35e57f022d9a7c537e0/json-20230227-sources.jar"
+                        },
+                        {
+                            "name": "json",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/org.json/json/20230227/7a0d4aca76513d8ce81f9b044ce8126b84809ad8/json-20230227.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "io.github.jason-lang",
+                    "name": "jason-interpreter",
+                    "version": "3.3.0",
+                    "artifacts": [
+                        {
+                            "name": "jason-interpreter",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/io.github.jason-lang/jason-interpreter/3.3.0/3c0fae64839e6566abeb9ed42ab63255e570f972/jason-interpreter-3.3.0.jar"
+                        },
+                        {
+                            "name": "jason-interpreter",
+                            "classifier": "sources",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/io.github.jason-lang/jason-interpreter/3.3.0/7803e7f8346d1ddeb0fcc5a0baf100aaa131a4bd/jason-interpreter-3.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "net.sf.ingenias",
+                    "name": "jade",
+                    "version": "4.3",
+                    "artifacts": [
+                        {
+                            "name": "jade",
+                            "classifier": "sources",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/net.sf.ingenias/jade/4.3/5bcf99e05d16da9a885533d3a24fd74e10f1696d/jade-4.3-sources.jar"
+                        },
+                        {
+                            "name": "jade",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/net.sf.ingenias/jade/4.3/2cf02ba26058230c72da969100a3c2e2e7f06628/jade-4.3.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.glassfish",
+                    "name": "javax.json",
+                    "version": "1.1.4",
+                    "artifacts": [
+                        {
+                            "name": "javax.json",
+                            "classifier": "sources",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.1.4/c8718c73685d7d4915905c14ef650c7ca4f5d97e/javax.json-1.1.4-sources.jar"
+                        },
+                        {
+                            "name": "javax.json",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.1.4/943f240a509d3c70b448a55c6735591ecbd37c88/javax.json-1.1.4.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "javax.json",
+                    "name": "javax.json-api",
+                    "version": "1.1.4",
+                    "artifacts": [
+                        {
+                            "name": "javax.json-api",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/javax.json/javax.json-api/1.1.4/c8efa3cfaeee2b05c2dfd54cba21548a081b1746/javax.json-api-1.1.4.jar"
+                        },
+                        {
+                            "name": "javax.json-api",
+                            "classifier": "sources",
+                            "path": "/Users/danialkhayatian/.gradle/caches/modules-2/files-2.1/javax.json/javax.json-api/1.1.4/eb81279e894e71bf034681c5494c60001775bb0/javax.json-api-1.1.4-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}

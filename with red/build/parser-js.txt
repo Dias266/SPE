@@ -1,0 +1,18 @@
+// Ensure msg.payload is a string
+let raw = typeof msg.payload === 'string' ? msg.payload : JSON.stringify(msg.payload);
+
+// Split the string by pipe |
+let parts = raw.split('|');
+let data = {};
+
+// Iterate through parts to create the object
+parts.forEach(part => {
+    let [key, val] = part.split(':');
+    if (key && val) {
+        // Trim whitespace and force keys to lowercase to match your UI nodes
+        data[key.trim().toLowerCase()] = val.trim();
+    }
+});
+
+msg.payload = data;
+return msg;

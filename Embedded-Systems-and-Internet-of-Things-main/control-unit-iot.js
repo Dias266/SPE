@@ -88,20 +88,8 @@ class SerialService {
     
     initializeSerial() {
         try {
-            this.port = new SerialPort({
-                path: SERIAL_PORT,
-                baudRate: SERIAL_BAUD_RATE
-            });
             
-            this.parser = this.port.pipe(new ReadlineParser({ delimiter: '\n' }));
-            
-            this.port.on('open', () => {
-                console.log('Serial connection established with Arduino');
-            });
-            
-            this.parser.on('data', (data) => {
-                this.handleSerialData(data);
-            });
+            this.handleSerialData(data);
             
             this.port.on('error', (err) => {
                 console.error('Serial error:', err.message);
@@ -279,14 +267,76 @@ app.get('/api/telemetry/statistics', (req, res) => {
     });
 });
 
-app.get('/api/status', (req, res) => {
-    res.json({
-        success: true,
-        mqtt: mqttService.client.connected,
-        serial: serialService.port ? serialService.port.isOpen : false,
-        telemetryCount: dataStorageService.telemetryHistory.length,
-        currentState: dataStorageService.currentState,
-        timestamp: new Date().toISOString()
+app.get('/api/publish-test', (req, res) => {
+    // 1. Prepare the data
+    const vin = 'TEST-VIN-123';
+    const temp = '55';
+    const mileage = '4000';
+    const state = 'NORMAL';
+    const timestamp = Date.now().toString();
+    const sig = '12345678';
+
+    const packet = `VIN:${vin}|TEMP:${temp}|MILEAGE:${mileage}|STATE:${state}|TIMESTAMP:${timestamp}|SIG:${sig}`;
+    const TOPIC = 'vehicle/telemetry';
+
+    // 2. Check if the MQTT client is connected
+    if (!mqttService.client || !mqttService.client.connected) {
+        return res.status(503).json({
+            success: false,
+            message: 'MQTT client is not connected'
+        });
+    }
+
+    // 3. Publish the message
+    mqttService.client.publish(TOPIC, packet, (err) => {
+        if (err) {
+            return res.status(500).json({
+                success: false,
+                message: 'Failed to publish message',
+                error: err.message
+            });
+        }
+
+        // 4. Return success
+        res.json({
+            success: true,
+            message: 'Telemetry published successfully',
+            sentPacket: packet
+        });
+    });
+});
+
+
+app.post('/api/publish-telemetry', (req, res) => {
+    // 1. Destructure data from the request body
+    // We provide fallback defaults if the user doesn't provide them
+    const { vin, temp, mileage, state } = req.body;
+
+    // Basic validation to ensure required data is present
+    if (!vin || !temp || !mileage || !state) {
+        return res.status(400).json({
+            success: false,
+            message: 'Missing required fields: vin, temp, mileage, or state.'
+        });
+    }
+
+    // 2. Construct the packet
+    const timestamp = Date.now().toString();
+    const sig = '12345678'; // Keeping as is, or you could accept this from body too
+    const packet = `VIN:${vin}|TEMP:${temp}|MILEAGE:${mileage}|STATE:${state}|TIMESTAMP:${timestamp}|SIG:${sig}`;
+    const TOPIC = 'vehicle/telemetry';
+
+    // 3. Check connection
+    if (!mqttService.client || !mqttService.client.connected) {
+        return res.status(503).json({ success: false, message: 'MQTT client not connected' });
+    }
+
+    // 4. Publish
+    mqttService.client.publish(TOPIC, packet, (err) => {
+        if (err) {
+            return res.status(500).json({ success: false, message: 'Publishing failed', error: err.message });
+        }
+        res.json({ success: true, message: 'Telemetry published', packet });
     });
 });
 

@@ -42,164 +42,168 @@
         </div>
 
         <!-- Main Grid -->
-        <div class="grid grid-cols-3 gap-6">
-            <!-- Temperature Chart -->
-            <div class="col-span-2 bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4"> Temperature History</h2>
-                <canvas id="temperatureChart" class="w-full h-64"></canvas>
-                <div class="mt-4 grid grid-cols-3 gap-4 text-center">
-                    <div>
-                        <div class="text-sm text-gray-400">AVG TEMP</div>
-                        <div id="avg-temp" class="text-2xl font-bold text-blue-400">--</div>
+        <div class="container mx-auto p-6">
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Temperature Chart -->
+                <div class="col-span-2 bg-gray-800 p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4"> Temperature History</h2>
+                    <canvas style="max-height: 340px !important;" id="temperatureChart" class="w-full h-64"></canvas>
+                    <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="text-sm text-gray-400">AVG TEMP</div>
+                            <div id="avg-temp" class="text-2xl font-bold text-blue-400">--</div>
+                        </div>
+                        <div>
+                            <div class="text-sm text-gray-400">MIN TEMP</div>
+                            <div id="min-temp" class="text-2xl font-bold text-green-400">--</div>
+                        </div>
+                        <div>
+                            <div class="text-sm text-gray-400">MAX TEMP</div>
+                            <div id="max-temp" class="text-2xl font-bold text-red-400">--</div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="text-sm text-gray-400">MIN TEMP</div>
-                        <div id="min-temp" class="text-2xl font-bold text-green-400">--</div>
-                    </div>
-                    <div>
-                        <div class="text-sm text-gray-400">MAX TEMP</div>
-                        <div id="max-temp" class="text-2xl font-bold text-red-400">--</div>
+                </div>
+
+                <!-- System Status -->
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">🔧 System Status</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- ESP32 Status -->
+                        <div class="bg-gray-900 p-4 rounded">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">ESP32 Telematics</span>
+                                <span id="esp32-status" class="text-green-400">● Online</span>
+                            </div>
+                            <div class="text-sm text-gray-400">
+                                <div>Sampling: <span id="sampling-freq" class="text-white">5s</span></div>
+                                <div>Last Update: <span id="last-update" class="text-white">--</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Arduino Status -->
+                        <div class="bg-gray-900 p-4 rounded">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">Arduino Auth</span>
+                                <span id="arduino-status" class="text-green-400">● Ready</span>
+                            </div>
+                            <div class="text-sm text-gray-400">
+                                <div>Auth Method: <span class="text-white">ECDSA</span></div>
+                                <div>Verified: <span id="verified-count" class="text-white">0</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Blockchain Status -->
+                        <div class="bg-gray-900 p-4 rounded">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">Blockchain</span>
+                                <span id="blockchain-status" class="text-green-400">● Synced</span>
+                            </div>
+                            <div class="text-sm text-gray-400">
+                                <div>Network: <span class="text-white">Hyperledger</span></div>
+                                <div>Records: <span id="blockchain-records" class="text-white">--</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Diagnostic Codes -->
+                        <div class="bg-gray-900 p-4 rounded">
+                            <div class="font-semibold mb-2">Diagnostic Codes</div>
+                            <div id="dtc-display" class="text-sm text-gray-400">
+                                No codes detected
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- System Status -->
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4">🔧 System Status</h2>
-                
-                <div class="space-y-4">
-                    <!-- ESP32 Status -->
-                    <div class="bg-gray-900 p-4 rounded">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="font-semibold">ESP32 Telematics</span>
-                            <span id="esp32-status" class="text-green-400">● Online</span>
-                        </div>
-                        <div class="text-sm text-gray-400">
-                            <div>Sampling: <span id="sampling-freq" class="text-white">5s</span></div>
-                            <div>Last Update: <span id="last-update" class="text-white">--</span></div>
+            <!-- Activity Log -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold mb-4"> Activity Log</h2>
+                <div id="activity-log" class="space-y-1 max-h-64 overflow-y-auto font-mono text-xs">
+                    <div class="text-gray-400">Initializing dashboard...</div>
+                </div>
+            </div>
+
+            <!-- FSM Diagram -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold mb-4"> Finite State Machine</h2>
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- ESP32 FSM -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-blue-400">ESP32 Temperature FSM</h3>
+                        <div class="bg-gray-900 p-4 rounded">
+                            <div class="flex justify-around items-center">
+                                <div id="fsm-normal" class="text-center p-4 rounded-lg bg-gray-700 transition-all">
+                                    <div class="text-2xl mb-2">🟢</div>
+                                    <div class="font-semibold">NORMAL</div>
+                                    <div class="text-xs text-gray-400">T &lt; 30°C</div>
+                                    <div class="text-xs text-gray-400">Freq: 5s</div>
+                                </div>
+                                <div class="text-2xl">→</div>
+                                <div id="fsm-warning" class="text-center p-4 rounded-lg bg-gray-700 transition-all">
+                                    <div class="text-2xl mb-2">🟡</div>
+                                    <div class="font-semibold">WARNING</div>
+                                    <div class="text-xs text-gray-400">30-40°C</div>
+                                    <div class="text-xs text-gray-400">Freq: 2s</div>
+                                </div>
+                                <div class="text-2xl">→</div>
+                                <div id="fsm-critical" class="text-center p-4 rounded-lg bg-gray-700 transition-all">
+                                    <div class="text-2xl mb-2">🔴</div>
+                                    <div class="font-semibold">CRITICAL</div>
+                                    <div class="text-xs text-gray-400">T &gt; 40°C</div>
+                                    <div class="text-xs text-gray-400">Freq: 1s</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Arduino Status -->
-                    <div class="bg-gray-900 p-4 rounded">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="font-semibold">Arduino Auth</span>
-                            <span id="arduino-status" class="text-green-400">● Ready</span>
-                        </div>
-                        <div class="text-sm text-gray-400">
-                            <div>Auth Method: <span class="text-white">ECDSA</span></div>
-                            <div>Verified: <span id="verified-count" class="text-white">0</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Blockchain Status -->
-                    <div class="bg-gray-900 p-4 rounded">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="font-semibold">Blockchain</span>
-                            <span id="blockchain-status" class="text-green-400">● Synced</span>
-                        </div>
-                        <div class="text-sm text-gray-400">
-                            <div>Network: <span class="text-white">Hyperledger</span></div>
-                            <div>Records: <span id="blockchain-records" class="text-white">--</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Diagnostic Codes -->
-                    <div class="bg-gray-900 p-4 rounded">
-                        <div class="font-semibold mb-2">Diagnostic Codes</div>
-                        <div id="dtc-display" class="text-sm text-gray-400">
-                            No codes detected
+                    <!-- Arduino FSM -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-purple-400">Arduino Authentication FSM</h3>
+                        <div class="bg-gray-900 p-4 rounded">
+                            <div class="flex flex-col space-y-3">
+                                <div id="fsm-auth-waiting" class="p-3 rounded-lg bg-gray-700 transition-all">
+                                    <div class="flex items-center">
+                                        <div class="text-xl mr-3">⏳</div>
+                                        <div>
+                                            <div class="font-semibold">WAITING</div>
+                                            <div class="text-xs text-gray-400">Idle state</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">↓</div>
+                                <div id="fsm-auth-verifying" class="p-3 rounded-lg bg-gray-700 transition-all">
+                                    <div class="flex items-center">
+                                        <div class="text-xl mr-3">🔐</div>
+                                        <div>
+                                            <div class="font-semibold">AUTHENTICATING</div>
+                                            <div class="text-xs text-gray-400">Verifying ECDSA signature</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">↓</div>
+                                <div class="flex space-x-3">
+                                    <div id="fsm-auth-valid" class="flex-1 p-3 rounded-lg bg-gray-700 transition-all">
+                                        <div class="text-center">
+                                            <div class="text-xl mb-1">✅</div>
+                                            <div class="font-semibold text-sm">VALID</div>
+                                        </div>
+                                    </div>
+                                    <div id="fsm-auth-invalid" class="flex-1 p-3 rounded-lg bg-gray-700 transition-all">
+                                        <div class="text-center">
+                                            <div class="text-xl mb-1">❌</div>
+                                            <div class="font-semibold text-sm">INVALID</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <!-- Activity Log -->
-        <div class="mt-6 bg-gray-800 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold mb-4"> Activity Log</h2>
-            <div id="activity-log" class="space-y-1 max-h-64 overflow-y-auto font-mono text-xs">
-                <div class="text-gray-400">Initializing dashboard...</div>
-            </div>
-        </div>
-
-        <!-- FSM Diagram -->
-        <div class="mt-6 bg-gray-800 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold mb-4"> Finite State Machine</h2>
-            <div class="grid grid-cols-2 gap-6">
-                <!-- ESP32 FSM -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-3 text-blue-400">ESP32 Temperature FSM</h3>
-                    <div class="bg-gray-900 p-4 rounded">
-                        <div class="flex justify-around items-center">
-                            <div id="fsm-normal" class="text-center p-4 rounded-lg bg-gray-700 transition-all">
-                                <div class="text-2xl mb-2">🟢</div>
-                                <div class="font-semibold">NORMAL</div>
-                                <div class="text-xs text-gray-400">T &lt; 30°C</div>
-                                <div class="text-xs text-gray-400">Freq: 5s</div>
-                            </div>
-                            <div class="text-2xl">→</div>
-                            <div id="fsm-warning" class="text-center p-4 rounded-lg bg-gray-700 transition-all">
-                                <div class="text-2xl mb-2">🟡</div>
-                                <div class="font-semibold">WARNING</div>
-                                <div class="text-xs text-gray-400">30-40°C</div>
-                                <div class="text-xs text-gray-400">Freq: 2s</div>
-                            </div>
-                            <div class="text-2xl">→</div>
-                            <div id="fsm-critical" class="text-center p-4 rounded-lg bg-gray-700 transition-all">
-                                <div class="text-2xl mb-2">🔴</div>
-                                <div class="font-semibold">CRITICAL</div>
-                                <div class="text-xs text-gray-400">T &gt; 40°C</div>
-                                <div class="text-xs text-gray-400">Freq: 1s</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Arduino FSM -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-3 text-purple-400">Arduino Authentication FSM</h3>
-                    <div class="bg-gray-900 p-4 rounded">
-                        <div class="flex flex-col space-y-3">
-                            <div id="fsm-auth-waiting" class="p-3 rounded-lg bg-gray-700 transition-all">
-                                <div class="flex items-center">
-                                    <div class="text-xl mr-3">⏳</div>
-                                    <div>
-                                        <div class="font-semibold">WAITING</div>
-                                        <div class="text-xs text-gray-400">Idle state</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center">↓</div>
-                            <div id="fsm-auth-verifying" class="p-3 rounded-lg bg-gray-700 transition-all">
-                                <div class="flex items-center">
-                                    <div class="text-xl mr-3">🔐</div>
-                                    <div>
-                                        <div class="font-semibold">AUTHENTICATING</div>
-                                        <div class="text-xs text-gray-400">Verifying ECDSA signature</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center">↓</div>
-                            <div class="flex space-x-3">
-                                <div id="fsm-auth-valid" class="flex-1 p-3 rounded-lg bg-gray-700 transition-all">
-                                    <div class="text-center">
-                                        <div class="text-xl mb-1">✅</div>
-                                        <div class="font-semibold text-sm">VALID</div>
-                                    </div>
-                                </div>
-                                <div id="fsm-auth-invalid" class="flex-1 p-3 rounded-lg bg-gray-700 transition-all">
-                                    <div class="text-center">
-                                        <div class="text-xl mb-1">❌</div>
-                                        <div class="font-semibold text-sm">INVALID</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Footer -->
         <div class="mt-6 text-center text-gray-500 text-sm">

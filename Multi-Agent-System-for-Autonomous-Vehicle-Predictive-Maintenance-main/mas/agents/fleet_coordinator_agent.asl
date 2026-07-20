@@ -44,11 +44,22 @@ overload_threshold(3).
        !register_with_environment;
        !broadcast_pressure;
        !monitor_fleet.
+       !periodic_test_fleet. // Add this new goal
 
 +!register_with_environment
     <- registerCoordinator;
        .print("[FleetCoordinator] Registered with MaintenanceDataBridge.").
 
+
+
+// 2. Add the recursive periodic plan
++!periodic_test_fleet
+    <- // Replace 'VIN_EXAMPLE' and 'HISTORY_EXAMPLE' with your actual data source
+        History = "{\"vin\":\"ABC-987\",\"temp\":\"66\",\"mileage\":\"5000\",\"state\":\"WARNING\",\"timestamp\":\"1784375021657\"}";
+       
+       +test_fleet("VIN_001", History); 
+       .wait(5000);
+       !periodic_test_fleet.
 
 // ---------------------------------------------------------------------------
 // PLANS: STIGMERGY — BOOKING PRESSURE MANAGEMENT
@@ -136,6 +147,54 @@ overload_threshold(3).
     :  evaporation_counter(C) & evaporation_rate(R) & C < R
     <- NC = C + 1;
        -+evaporation_counter(NC).
+
+
+
+// ---------------------------------------------------------------------------
+// PLANS: test_fleet
+// ---------------------------------------------------------------------------
+
++test_fleet(VIN, History)
+    <- .print("[FleetCoordinator] Processing history for VIN: ", VIN);
+       !evaluate_data(VIN, History);
+       -test_fleet(VIN, History).
+
++!evaluate_data(VIN, History)
+
+    <- .print("[FleetCoordinator] CRITICAL status found for ", VIN, ". Notifying vehicle agent.");
+    
+        .send(self, tell, service_completed_Mqtt(VIN, history));
+
+
+
+
+       
+       .print("[FleetCoordinator] Sent urgent service notification to ", VIN).
+
++!evaluate_data(VIN, History)
+    <- .print("[FleetCoordinator] Status for ", VIN, " is normal. No action needed.").
+
+
+
+// ---------------------------------------------------------------------------
+// PLANS: SERVICE COMPLETION HANDLING
+// ---------------------------------------------------------------------------
++service_completed_Mqtt(VehicleID, History)
+    <- .print("[FleetCoordinator] Service completed for ", VehicleID);
+       
+       // Use a single string with variables, avoiding excessive concatenation
+
+        .concat("{\"vin\": \"", VehicleID, "\", ",
+        "\"temp\": \"22\", ",
+        "\"mileage\": \"2000\", ",
+        "\"state\": \"NORMAL\"}", MQTT_Payload);
+
+        .concat("fleet/vehicles/", VehicleID, "/fix", MQTT_Topic);
+       
+        sendMQTTMessage(MQTT_Topic, MQTT_Payload);
+       
+        -service_completed_Mqtt(VehicleID, History).
+
 
 
 // ---------------------------------------------------------------------------
