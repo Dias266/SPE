@@ -7,6 +7,7 @@ DATA_FILE = "data.arff"
 DEFAULT_JAR_FILE = "weka.jar"
 TEMPLATE_FILE = "training_template.arff"
 LOG_FILE = "final_predictions_log.txt"  # File where results will be saved
+LOG_FILE_dashboard = "../MAS_system_node_server_on-main/back/backend/final_predictions_log.txt"  # File where results will be saved
 
 CLASSIFIER_CLASS = "weka.classifiers.meta.AdaBoostM1"
 
@@ -136,6 +137,7 @@ def main():
                 # --- SAVE THE RESULT TO A TXT FILE ---
                 log_entry = (
                     f"Instance Number: {instance_num}\n"
+                    f"Instance Data: {test_row}\n"
                     f"Weka Raw Prediction: {weka_prediction}\n"
                     f"Model Confidence: {confidence_percentage:.1f}%\n"
                     f"Final Adjusted Decision: {explanation}\n"
@@ -144,6 +146,13 @@ def main():
                 
                 with open(LOG_FILE, "a", encoding="utf-8") as log_f:
                     log_f.write(log_entry)
+
+                    
+                with open(LOG_FILE_dashboard, "a", encoding="utf-8") as log_f:
+                    log_f.write(log_entry)
+
+
+                
                 
                 print(f"🎉 Results successfully appended to file: {LOG_FILE}\n")
             else:

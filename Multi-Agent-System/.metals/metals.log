@@ -18427,3 +18427,463 @@ WARNING: Unmatched cancel notification for request id 1848
 2026.07.18 19:46:12 INFO  shutting down Metals
 2026.07.18 19:46:12 INFO  Shut down connection with build server.
 2026.07.18 19:46:12 INFO  Exiting server
+2026.07.21 23:06:27 INFO  Started: Metals version 1.6.7 in folders '/Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System' for client Visual Studio Code 1.106.0.
+2026.07.21 23:06:27 INFO  Memory monitor started
+2026.07.21 23:06:27 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.07.21 23:06:27 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:28 INFO  Attempting to connect to the build server...
+2026.07.21 23:06:28 INFO  Found a Bloop server running
+2026.07.21 23:06:29 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/.metals/bsp.trace.json or /Users/danialkhayatian/Library/Caches/org.scalameta.metals/bsp.trace.json
+2026.07.21 23:06:29 INFO  time: Connected to build server in 0.48s
+2026.07.21 23:06:29 INFO  Connected to Build server: Bloop v2.0.19
+2026.07.21 23:06:29 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:31 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.07.21 23:06:31 INFO  time: indexed workspace in 2.69s
+2026.07.21 23:06:32 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:06:32 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:32 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:06:32 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:41 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:41 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:41 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:48 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:48 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:50 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:50 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:50 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:51 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:51 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:51 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:51 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:06:51 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:09 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:09 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:10 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:12 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:12 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:12 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:14 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:14 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:14 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:15 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:15 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:07:15 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:15 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:15 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:17 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:17 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:17 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+Jul 21, 2026 11:07:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 128
+2026.07.21 23:07:17 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:17 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:17 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:17 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:18 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:18 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:19 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:21 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:21 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:22 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:22 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:23 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:23 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:23 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+Jul 21, 2026 11:07:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: Range [-1, 15774) out of bounds for length 22595
+java.lang.StringIndexOutOfBoundsException: Range [-1, 15774) out of bounds for length 22595
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckFromToIndex(Preconditions.java:112)
+	at java.base/jdk.internal.util.Preconditions.checkFromToIndex(Preconditions.java:349)
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4937)
+	at java.base/java.lang.String.substring(String.java:2899)
+	at scala.meta.internal.pc.JavaMetalsGlobal.findIndentifierStartAndEnd(JavaMetalsGlobal.scala:87)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:48)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:95)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:202)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:899)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:95)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:202)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:899)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:151)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:627)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.findAllReferences(JavaDocumentHighlightProvider.scala:71)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:56)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:25)
+	at scala.meta.internal.pc.JavaPresentationCompiler.documentHighlight(JavaPresentationCompiler.scala:112)
+	at scala.meta.internal.metals.Compilers.$anonfun$documentHighlight$1(Compilers.scala:908)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$4(Compilers.scala:1543)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$3(Compilers.scala:1543)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.documentHighlights(MetalsLspService.scala:1018)
+	at scala.meta.internal.metals.WorkspaceLspService.documentHighlights(WorkspaceLspService.scala:541)
+	at scala.meta.metals.lsp.DelegatingScalaService.documentHighlights(DelegatingScalaService.scala:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+
+2026.07.21 23:07:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+Jul 21, 2026 11:07:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: Range [-1, 15774) out of bounds for length 22595
+java.lang.StringIndexOutOfBoundsException: Range [-1, 15774) out of bounds for length 22595
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckFromToIndex(Preconditions.java:112)
+	at java.base/jdk.internal.util.Preconditions.checkFromToIndex(Preconditions.java:349)
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4937)
+	at java.base/java.lang.String.substring(String.java:2899)
+	at scala.meta.internal.pc.JavaMetalsGlobal.findIndentifierStartAndEnd(JavaMetalsGlobal.scala:87)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:48)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:95)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:202)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:899)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:95)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:202)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:899)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:151)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:627)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.findAllReferences(JavaDocumentHighlightProvider.scala:71)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:56)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:25)
+	at scala.meta.internal.pc.JavaPresentationCompiler.documentHighlight(JavaPresentationCompiler.scala:112)
+	at scala.meta.internal.metals.Compilers.$anonfun$documentHighlight$1(Compilers.scala:908)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$4(Compilers.scala:1543)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$3(Compilers.scala:1543)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.documentHighlights(MetalsLspService.scala:1018)
+	at scala.meta.internal.metals.WorkspaceLspService.documentHighlights(WorkspaceLspService.scala:541)
+	at scala.meta.metals.lsp.DelegatingScalaService.documentHighlights(DelegatingScalaService.scala:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+
+2026.07.21 23:07:26 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:37 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:43 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:43 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:45 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:45 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:53 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:07:59 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:00 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:18 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:18 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:08:18 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:18 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+Jul 21, 2026 11:08:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: Range [-1, 15774) out of bounds for length 22595
+java.lang.StringIndexOutOfBoundsException: Range [-1, 15774) out of bounds for length 22595
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckFromToIndex(Preconditions.java:112)
+	at java.base/jdk.internal.util.Preconditions.checkFromToIndex(Preconditions.java:349)
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4937)
+	at java.base/java.lang.String.substring(String.java:2899)
+	at scala.meta.internal.pc.JavaMetalsGlobal.findIndentifierStartAndEnd(JavaMetalsGlobal.scala:87)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:48)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:95)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:202)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:899)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:95)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:202)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:899)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:14)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:110)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:118)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:151)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:627)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:92)
+	at scala.meta.internal.pc.ReferenceScanner.scan(ReferenceScanner.scala:69)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.findAllReferences(JavaDocumentHighlightProvider.scala:71)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:56)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:25)
+	at scala.meta.internal.pc.JavaPresentationCompiler.documentHighlight(JavaPresentationCompiler.scala:112)
+	at scala.meta.internal.metals.Compilers.$anonfun$documentHighlight$1(Compilers.scala:908)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$4(Compilers.scala:1543)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$3(Compilers.scala:1543)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.documentHighlights(MetalsLspService.scala:1018)
+	at scala.meta.internal.metals.WorkspaceLspService.documentHighlights(WorkspaceLspService.scala:541)
+	at scala.meta.metals.lsp.DelegatingScalaService.documentHighlights(DelegatingScalaService.scala:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+
+2026.07.21 23:08:18 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:22 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:26 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:26 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:27 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:28 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:28 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:29 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:29 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:29 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:29 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:30 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:30 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:30 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:30 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:32 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:32 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:32 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+Jul 21, 2026 11:08:36 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: Range [-1, 15774) out of bounds for length 22595
+java.lang.StringIndexOutOfBoundsException: Range [-1, 15774) out of bounds for length 22595
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckFromToIndex(Preconditions.java:112)
+	at java.base/jdk.internal.util.Preconditions.checkFromToIndex(Preconditions.java:349)
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4937)
+	at java.base/java.lang.String.substring(String.java:2899)
+	at scala.meta.internal.pc.JavaMetalsGlobal.findIndentifierStartAndEnd(JavaMetalsGlobal.scala:87)
+	at scala.meta.internal.pc.JavaMetalsGlobal.isAtIdentifier(JavaMetalsGlobal.scala:137)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.atIdentifier$1(JavaDocumentHighlightProvider.scala:53)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:55)
+	at scala.meta.internal.pc.JavaDocumentHighlightProvider.documentHighlight(JavaDocumentHighlightProvider.scala:25)
+	at scala.meta.internal.pc.JavaPresentationCompiler.documentHighlight(JavaPresentationCompiler.scala:112)
+	at scala.meta.internal.metals.Compilers.$anonfun$documentHighlight$1(Compilers.scala:908)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$4(Compilers.scala:1543)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.Compilers.$anonfun$withPCAndAdjustLsp$3(Compilers.scala:1543)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.Compilers.withPCAndAdjustLsp(Compilers.scala:1535)
+	at scala.meta.internal.metals.Compilers.documentHighlight(Compilers.scala:903)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$documentHighlights$1(MetalsLspService.scala:1019)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.documentHighlights(MetalsLspService.scala:1018)
+	at scala.meta.internal.metals.WorkspaceLspService.documentHighlights(WorkspaceLspService.scala:541)
+	at scala.meta.metals.lsp.DelegatingScalaService.documentHighlights(DelegatingScalaService.scala:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:265)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:195)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+
+2026.07.21 23:08:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:37 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:37 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:37 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:38 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:38 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:39 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:39 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:39 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:08:41 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:09 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:09 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:10 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:10 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:11 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:11 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:14 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:14 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:14 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:19 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:19 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:19 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:19 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:22 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:22 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:22 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:24 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:28 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:35 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:09:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:35 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:36 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:36 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:36 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:36 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:36 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:38 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:39 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:39 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:42 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:42 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:42 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:45 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:47 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:47 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:47 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:47 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:52 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:52 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:09:52 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:52 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:52 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:52 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:53 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:53 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:54 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:54 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:54 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:54 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:59 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:59 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:09:59 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:59 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:59 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:59 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:59 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:09:59 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:00 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:00 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:20 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:10:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:20 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:10:26 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:28 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:29 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:13:28 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:29 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:28 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:28 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:30 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:50 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:50 WARN  no build target for: /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java
+2026.07.21 23:13:50 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:50 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+2026.07.21 23:13:50 INFO  no build target found for /Users/danialkhayatian/Desktop/pros/dockeri-spe/SPE/Multi-Agent-System/env/FleetMASEnvironment.java. Using fallback presentation compiler.
+Jul 21, 2026 11:15:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Jul 21, 2026 11:15:38 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace

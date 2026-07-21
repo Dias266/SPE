@@ -1,6 +1,9 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
+
 const app = express();
 app.use(cors());
 
@@ -19,20 +22,11 @@ app.get('/api/fleet', async (req, res) => {
             const html = r.data || '';
             const extract = (pattern) => html.match(pattern)?.[1] || 'N/A';
             
-
-
-            // Inside your parsedData map:
-            // Replace your Fleet Coordinator logic (i === 4) with this:
             if (i === 4) { // Fleet Coordinator Logic
-                const html = r.data || '';
-                
-                // Count anomalies
                 const oilAlerts = (html.match(/anomaly_detected\(vehicle_agent\d+,oil_pressure/g) || []).length;
                 const brakeAlerts = (html.match(/anomaly_detected\(vehicle_agent\d+,brake_wear/g) || []).length;
-                
-                // Attempt to match 'fleet_size(X)' or a generic fallback
                 const fleetMatch = html.match(/fleet_size\((\d+)/);
-                const fleetSize = fleetMatch ? fleetMatch[1] : '8'; // Default to 8 if not found
+                const fleetSize = fleetMatch ? fleetMatch[1] : '8';
                 
                 return {
                     agent: "Fleet Coordinator",
@@ -42,21 +36,19 @@ app.get('/api/fleet', async (req, res) => {
                     fleetSize: fleetSize
                 };
             }
-            // Replace your Service Center parsing logic (i === 3) with this:
-            if (i === 3) {
-                // Helper to strip <i> or <span> tags and get the inner value
+            
+            if (i === 3) { // Service Center Logic
                 const clean = (val) => val ? val.replace(/<[^>]*>/g, '').trim() : '0';
 
                 return {
                     agent: "Service Center",
-                    // This regex looks for the pattern and captures the content inside the parentheses
-                    // It accounts for potential tags like <i>
                     records: clean(html.match(/record_counter\((.*?)\)/)?.[1]),
                     oil: clean(html.match(/parts_inventory\(oil_filter,(.*?)\)/)?.[1]),
                     brake: clean(html.match(/parts_inventory\(brake_pad,(.*?)\)/)?.[1]),
                     overloaded: extract(/is_overloaded\((.*?)\)/)
                 };
             }
+            
             // Vehicle Logic
             return {
                 agent: `Vehicle ${i + 1}`,
@@ -70,5 +62,36 @@ app.get('/api/fleet', async (req, res) => {
         res.json(parsedData);
     } catch (e) { res.status(500).send(e.message); }
 });
+app.get('/api/ml-prediction', (req, res) => {
+    try {
+        // Use absolute path inside the container where the volume is mounted
+        const logPath = 'final_predictions_log.txt';
+        
+        if (!fs.existsSync(logPath)) {
+            return res.status(404).json({ error: `Prediction log file not found at: ${logPath}` });
+        }
 
+        const fileContent = fs.readFileSync(logPath, 'utf8');
+        const blocks = fileContent.split('========================================').map(b => b.trim()).filter(Boolean);
+        
+        if (blocks.length === 0) {
+            return res.json({ status: "No prediction data available" });
+        }
+
+        const latestBlock = blocks[blocks.length - 1];
+        const getField = (regex) => latestBlock.match(regex)?.[1]?.trim() || 'N/A';
+
+        const predictionData = {
+            instanceNumber: getField(/Instance Number:\s*(.*)/),
+            instanceData: getField(/Instance Data:\s*(.*)/),
+            rawPrediction: getField(/Weka Raw Prediction:\s*(.*)/),
+            confidence: getField(/Model Confidence:\s*(.*)/),
+            decision: getField(/Final Adjusted Decision:\s*(.*)/)
+        };
+
+        res.json(predictionData);
+    } catch (e) {
+        res.status(500).send(e.message);
+    }
+});
 app.listen(3000, () => console.log('Proxy active on port 3000'));

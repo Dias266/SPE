@@ -1,10 +1,132 @@
-Instance Number: 1
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
 Weka Raw Prediction: 1
-Model Confidence: 98.6%
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 7
+Instance Data: Motorcycle,'\'(50000.6-55000.5]\'',Average,'\'(1.5-2]\'','\'(7.3-8.2]\'',Diesel,Automatic,'\'(2330-inf)\'','\'(135099.2-inf)\'',2024-01-13,2025-07-20,Second,'\'(20000-22500]\'','\'(9.1-inf)\'','\'(-inf-0.3]\'','\'(16.00002-17.000007]\'',New,Good,New,?
+Weka Raw Prediction: 1
+Model Confidence: 51.9%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 2
+Instance Data: Van,'\'(60000.4-65000.3]\'',Average,'\'(0.5-1]\'','\'(6.4-7.3]\'',Electric,Automatic,'\'(2330-inf)\'','\'(120199.4-135099.2]\'',2023-09-21,2025-06-04,Second,'\'(22500-25000]\'','\'(6.4-7.3]\'','\'(-inf-0.3]\'','\'(13.000059-14.000046]\'',New,New,Weak,?
+Weka Raw Prediction: 1
+Model Confidence: 99.5%
 Final Adjusted Decision: Maintenance 1 (Needs Maintenance) - Reason: High confidence prediction
 ========================================
-Instance Number: 1
+Instance Number: 2
+Instance Data: Van,'\'(60000.4-65000.3]\'',Average,'\'(0.5-1]\'','\'(6.4-7.3]\'',Electric,Automatic,'\'(2330-inf)\'','\'(120199.4-135099.2]\'',2023-09-21,2025-06-04,Second,'\'(22500-25000]\'','\'(6.4-7.3]\'','\'(-inf-0.3]\'','\'(13.000059-14.000046]\'',New,New,Weak,?
 Weka Raw Prediction: 1
-Model Confidence: 98.6%
+Model Confidence: 99.5%
 Final Adjusted Decision: Maintenance 1 (Needs Maintenance) - Reason: High confidence prediction
+========================================
+Instance Number: 2
+Instance Data: Van,'\'(60000.4-65000.3]\'',Average,'\'(0.5-1]\'','\'(6.4-7.3]\'',Electric,Automatic,'\'(2330-inf)\'','\'(120199.4-135099.2]\'',2023-09-21,2025-06-04,Second,'\'(22500-25000]\'','\'(6.4-7.3]\'','\'(-inf-0.3]\'','\'(13.000059-14.000046]\'',New,New,Weak,?
+Weka Raw Prediction: 1
+Model Confidence: 99.5%
+Final Adjusted Decision: Maintenance 1 (Needs Maintenance) - Reason: High confidence prediction
+========================================
+Instance Number: 8
+Instance Data: Van,'\'(75000.1-inf)\'',Poor,'\'(1.5-2]\'','\'(1.9-2.8]\'',Petrol,Automatic,'\'(1990-2160]\'','\'(120199.4-135099.2]\'',2023-05-12,2026-02-13,First,'\'(-inf-7500]\'','\'(2.8-3.7]\'','\'(0.9-1.2]\'','\'(12.000072-13.000059]\'',Good,New,New,?
+Weka Raw Prediction: 1
+Model Confidence: 54.5%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
+========================================
+Instance Number: 8
+Instance Data: Van,'\'(75000.1-inf)\'',Poor,'\'(1.5-2]\'','\'(1.9-2.8]\'',Petrol,Automatic,'\'(1990-2160]\'','\'(120199.4-135099.2]\'',2023-05-12,2026-02-13,First,'\'(-inf-7500]\'','\'(2.8-3.7]\'','\'(0.9-1.2]\'','\'(12.000072-13.000059]\'',Good,New,New,?
+Weka Raw Prediction: 1
+Model Confidence: 54.5%
+Final Adjusted Decision: Maintenance 0 (No Maintenance Needed) - Reason: Confidence was lower than 70%
 ========================================

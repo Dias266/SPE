@@ -74,6 +74,7 @@ h1{
 }
 
 .card.service{ border-color:var(--accent); }
+.card.ml-box { border-color:var(--warning); }
 
 .card.warn{
     border-color:var(--warning);
@@ -83,11 +84,6 @@ h1{
 .card.critical{
     border-color:var(--danger);
     box-shadow:0 0 18px -4px var(--danger);
-}
-
-@keyframes dangerGlow{
-    from{ box-shadow:0 0 10px -4px var(--danger); }
-    to{ box-shadow:0 0 22px -2px var(--danger); }
 }
 
 h3{
@@ -120,6 +116,19 @@ h3{
     font-weight:600;
     color:var(--text);
     transition:color .4s ease;
+}
+
+/* ML Card Text Box Styling */
+.ml-data-text {
+    font-size: 0.75rem;
+    color: var(--muted);
+    word-break: break-all;
+    background: #0d1117;
+    padding: 8px;
+    border-radius: 6px;
+    margin-top: 5px;
+    max-height: 60px;
+    overflow-y: auto;
 }
 
 /* Urgency badge */
@@ -172,10 +181,10 @@ h3{
 <script>
 
 const API_URL = "http://localhost:3000/api/fleet";
+const ML_API_URL = "http://localhost:3000/api/ml-prediction";
 const POLL_MS = 4000;
 
-const cardEls = new Map();   // key -> card element
-const dataCache = new Map(); // key -> last known values (for animating deltas)
+const cardEls = new Map();
 
 function urgencyClass(u){
     if(u === "HIGH") return "high";
@@ -190,7 +199,6 @@ function tempClass(t){
     return "temp-cool";
 }
 
-// Smoothly counts a number element from its current value to a new one
 function animateNumber(el, to, suffix=""){
     const from = parseFloat(el.dataset.raw || to) || 0;
     to = parseFloat(to);
@@ -217,22 +225,10 @@ function buildVehicleCard(a){
     card.className = "card in";
     card.innerHTML = `
         <h3>🚗 ${a.agent}</h3>
-        <div class="stat">
-            <span>VIN</span>
-            <span class="value vin">${a.vin}</span>
-        </div>
-        <div class="stat">
-            <span>Mileage</span>
-            <span class="value mileage">0 km</span>
-        </div>
-        <div class="stat">
-            <span>Temp</span>
-            <span class="value temp">0.0°C</span>
-        </div>
-        <div class="stat">
-            <span>Urgency</span>
-            <span class="badge urgency"><span class="dot"></span><span class="label"></span></span>
-        </div>
+        <div class="stat"><span>VIN</span><span class="value vin">${a.vin}</span></div>
+        <div class="stat"><span>Mileage</span><span class="value mileage">0 km</span></div>
+        <div class="stat"><span>Temp</span><span class="value temp">0.0°C</span></div>
+        <div class="stat"><span>Urgency</span><span class="badge urgency"><span class="dot"></span><span class="label"></span></span></div>
     `;
     return card;
 }
@@ -298,10 +294,46 @@ function updateServiceCard(card, a){
     card.classList.toggle("critical", overloaded);
 }
 
+function buildMlCard(){
+    const card = document.createElement("div");
+    card.className = "card ml-box in";
+    card.innerHTML = `
+        <h3>🤖 ML Prediction Model</h3>
+        <div class="stat"><span>Instance</span><span class="value ml-instance">0</span></div>
+        <div class="stat"><span>Confidence</span><span class="value ml-conf">0%</span></div>
+        <div class="stat"><span>Decision</span><span class="value ml-decision" style="font-size:0.8rem;margin-left:15px">Pending</span></div>
+        <div style="margin-top: 10px;">
+            <span style="color:var(--muted); font-size:0.8rem;">Instance Data:</span>
+            <div class="ml-data-text value ml-raw-data">Loading...</div>
+        </div>
+    `;
+    return card;
+}
+
+function updateMlCard(card, data){
+    card.querySelector(".ml-instance").textContent = data.instanceNumber;
+    card.querySelector(".ml-conf").textContent = data.confidence;
+    
+    const decisionEl = card.querySelector(".ml-decision");
+    decisionEl.textContent = data.decision;
+    
+    if(data.decision.includes("No Maintenance")) {
+        decisionEl.style.color = "var(--success)";
+    } else {
+        decisionEl.style.color = "var(--danger)";
+    }
+
+    card.querySelector(".ml-raw-data").textContent = data.instanceData;
+}
+
 async function refreshFleet(){
     try{
-        const res = await fetch(API_URL);
-        const agents = await res.json();
+        const [fleetRes, mlRes] = await Promise.all([
+            fetch(API_URL),
+            fetch(ML_API_URL).catch(() => null)
+        ]);
+
+        const agents = await fleetRes.json();
         const container = document.getElementById("fleet");
 
         if(container.textContent.trim() === "Loading...") container.innerHTML = "";
@@ -329,13 +361,29 @@ async function refreshFleet(){
             update(card, a);
         });
 
-        // Remove cards for vehicles no longer reported
+        // Render ML Box card dynamically
+        if (mlRes && mlRes.ok) {
+            const mlData = await mlRes.json();
+            const mlKey = "ml_prediction_box";
+            seenKeys.add(mlKey);
+            
+            let mlCard = cardEls.get(mlKey);
+            if(!mlCard){
+                mlCard = buildMlCard();
+                cardEls.set(mlKey, mlCard);
+                container.appendChild(mlCard);
+            }
+            updateMlCard(mlCard, mlData);
+        }
+
         for(const [key, card] of cardEls){
             if(!seenKeys.has(key)){
                 card.remove();
                 cardEls.delete(key);
             }
         }
+
+        document.getElementById("lastUpdate").textContent = `Last update: ${new Date().toLocaleTimeString()}`;
 
     } catch(e){
         console.log(e);
