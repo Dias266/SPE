@@ -56,7 +56,7 @@ Once container initialization completes, open your web browser to view your live
 
 ---
 
-<img width="1440" height="637" alt="Screenshot 2026-07-08 at 11 52 21" src="https://github.com/user-attachments/assets/5adfea99-118e-464c-ac2e-f534efeb03f9" />
+<img width="2842" height="1354" alt="image" src="https://github.com/user-attachments/assets/12fb983d-c8ba-41bf-b7d7-cebd7d11b9a3" />
 
 
 ## 🎛️ UI & Styling Customization
