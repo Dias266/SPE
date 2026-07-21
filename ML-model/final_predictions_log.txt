@@ -1,5 +1,10 @@
-Instance Number: 2
+Instance Number: 1
 Weka Raw Prediction: 1
-Model Confidence: 99.5%
+Model Confidence: 98.6%
+Final Adjusted Decision: Maintenance 1 (Needs Maintenance) - Reason: High confidence prediction
+========================================
+Instance Number: 1
+Weka Raw Prediction: 1
+Model Confidence: 98.6%
 Final Adjusted Decision: Maintenance 1 (Needs Maintenance) - Reason: High confidence prediction
 ========================================

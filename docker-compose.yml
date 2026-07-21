@@ -1,0 +1,58 @@
+services:
+  embedded-system-service:
+    image: python:3.9-alpine
+    working_dir: /app/Embedded-Systems-gs-main
+    volumes:
+      - .:/app
+    environment:
+      - MQTT_HOST=host.docker.internal
+      - BROKER_URL=mqtt://host.docker.internal:1883
+      - MQTT_URL=mqtt://host.docker.internal:1883
+    command: >
+      sh -c "apk add --no-cache nodejs npm && npm install && node control-unit-iot.js & python3 -m http.server 8081"
+    ports:
+      - "8081:8081"
+      - "3002:3002"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      
+  ml-service:
+    image: python:3.9-slim
+    working_dir: /app/ML-model
+    volumes:
+      - .:/app
+    command: >
+      bash -c "apt-get update && apt-get install -y default-jre && echo '1' | python3 main.py"
+
+  with-red-service:
+    image: docker:cli
+    working_dir: /app/with-red
+    volumes:
+      - type: bind
+        source: ./with-red
+        target: /app/with-red
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: sh -c "apk add --no-cache docker-compose && docker compose -f docker-compose.yml down --remove-orphans && docker compose -f docker-compose.yml up"
+#
+#  multi-agent-system-service:
+#    image: eclipse-temurin:21-jdk-jammy
+#    working_dir: /app/Multi-Agent-System
+#    volumes:
+#      - .:/app
+#    command: ./gradlew run
+
+  mas-system-service:
+    image: docker:cli
+    working_dir: /app/back
+    volumes:
+      - type: bind
+        source: ./MAS_system_node_server_on-main/back
+        target: /app/back
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      COMPOSE_PROJECT_NAME: mas_back
+    command: >
+      sh -c "
+        apk add --no-cache docker-compose &&
+        docker compose up --build
+      "

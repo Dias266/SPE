@@ -13,7 +13,8 @@ app.use(express.json());
 
 // CONFIGURATION
 
-const MQTT_BROKER = 'mqtt://localhost:1883';
+//const MQTT_BROKER = 'mqtt://localhost:1883';
+const MQTT_BROKER = process.env.BROKER_URL || process.env.MQTT_URL || 'mqtt://host.docker.internal:1883';
 const SERIAL_PORT = '/dev/ttyUSB0'; // CHANGE THIS to your Arduino port!
 const SERIAL_BAUD_RATE = 9600;  // Match Arduino baud rate
 
