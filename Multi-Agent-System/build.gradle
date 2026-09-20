@@ -15,12 +15,18 @@ dependencies {
     implementation 'javax.json:javax.json-api:1.1.4'
     implementation group: 'org.json', name: 'json', version: '20230227'
 
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 sourceSets {
     main {
         java {
             srcDirs = ['.']
+            exclude 'src/**'
+            exclude 'build/**'
+            exclude '.gradle/**'
         }
     }
 }
@@ -29,6 +35,10 @@ compileJava {
     sourceCompatibility = '21'
     targetCompatibility = '21'
     options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 task run(type: JavaExec, dependsOn: compileJava) {
